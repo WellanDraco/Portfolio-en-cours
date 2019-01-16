@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Passero+One');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+    color: #00629F;
+    font-family:"Merriweather Sans", sans-serif;
+}
+
+
+a, .mailto{
+    color: #b76323;
+    text-decoration:none;
+}
+
+
+.introPiscine {
+    color:rgb(249,242,244);
+    background-color: rgba(3,97,159,0.9);
+    text-align: center;
+    font-size:1.2em;
+    line-height: 2em;
+}
+
+.introLivre {
+    font-size: 1em;
+    line-height:1.8em;
+}
+
+h1>a,h2,nav {
+    font-family: "Passero One", sans-serif;
+    color: #03619f;
+ }
+
+
+footer {
+
+    background-color:#4EA4D7;
+}
+
+p.mentions, p.nom {
+    font-size:1em;
+    line-height:1.7em;
+}
+
+nav>ul,h2 {
+    font-size:2.5em;
+}
+
+.autres>main>ul>li>a {
+    font-size:2.1em;
+}
+
+.autres>main>ul>li {
+    font-size:1.3em;
+}
+
+article>div>p:last-child {
+    font-size:1.5em;
+}
+
+p {
+    font-size:1.4em;
+    line-height:2em;
+}
+
+.article H2 {
+    font-size:3em;
+}
+
+.chapeau {
+    color:#1c0b03;
+    font-size:1.8em;
+    line-height:1.3em;
+}
+
+p.citation {
+    font-size:2em;
+    line-height:1.5em;
+    color:#51a6db;
+}
+
+p.source {
+    font-size:1.4em;
+    line-height:1.2em;
+}
+
+p.citation, p.source {
+    font-family:roboto, sans-serif;
+    font-style: italic;
+}
+
+h1 {
+    font-size:1.9em;
+}

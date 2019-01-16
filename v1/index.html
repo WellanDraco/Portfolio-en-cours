@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+    <head>
+        <meta name="description" content="Actuellement étudiant dans le département Métiers du multimédia et de l'internet, Arthur Mougin est un développeur web passionné par le développement front-end.">
+        <meta charset="UTF-8">
+        <title>Arthur Mougin</title>
+        <link rel="shortcut icon" href="css/img-interface/favicon.ico" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              "url": "arthur-moug.in",
+              "givenName": "Arthur",
+              "familyName":"Mougin",
+              "email": "arthur.mougin@live.fr",
+              "description": "Bonjour cher curieux(se), je suis un jeune développeur Web qui aime jouer avec les outils SEO.",
+              "image":"https://media-exp2.
+              lcdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA2HAAAAJDkyZDY2MWFkLTk5NWEtNDE0OS1hNTA5LWYwNGJlNmQ5NjE0NA.jpg",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Adresse mail"
+              }
+            }
+        </script>
+    </head>
+    <body ng-app="siteApp" ng-controller="mainController">
+
+        <header>
+            <a href="#">Arthur Mougin</a>
+            <nav><a onclick="document.querySelector('nav').classList.toggle('ouvert')"><h2>&lt;menu&gt;</h2></a>
+                <ul>
+                    <li><a onclick="document.querySelector('nav').classList.remove('ouvert')" href="#home">Accueil</a></li>
+                    <li><a onclick="document.querySelector('nav').classList.remove('ouvert')" href="#travaux">Mes travaux</a></li>
+                    <li><a onclick="document.querySelector('nav').classList.remove('ouvert')" href="#contact">Me contacter</a></li>
+                </ul>
+                <a onclick="document.querySelector('nav').classList.remove('ouvert')" class="background"> </a>
+
+            </nav>
+        </header>
+        <main class="home" ng-view>
+            <div class="loading">
+                <p>Chargement en cours</p>
+
+            </div>
+        </main>
+        <footer>
+                <p>Arthur Mougin 2018</p>
+                <p class="legal">Développement par Arthur Mougin,<br/>Design par Robin Roland</p>
+
+        </footer>
+        <script src="js/angular1.6.6.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/mask.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/controller.js"></script>
+        <script src="app/routes.js"></script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<DOCTYPE HTML>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Ubuntu" rel="stylesheet">
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js">
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="a-body ">
+
+    <a-scene class="fullscreen" debug inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+      <a-entity rotation="0 0 0" position="-4 0 -4.4" environment="preset: forest;seed:3;lighting:point;lightPosition:-100 50 50;groundTexture:walkernoise;dressingOnPlayArea:0.0200;">
+      </a-entity>
+      <a-camera position="0 1.6 0" camera="userHeight:0.001" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="">
+        <a-cursor fuse="false" material="opacity:0;" raycaster="" cursor="" geometry="">
+        </a-cursor>
+        <a-image position="0 -0.2 -1.1" src="medias/intro-texte.png" scale="1 2 1" material="opacity:1;shader: flat; transparent: true; side: double">
+        <a-animation attribute="scale" begin="click" to="0 0 0" dur="100"></a-animation>
+        </a-image>
+      </a-camera>
+      <a-entity position="-2.351 4 -3.23" rotation="0 36 0">
+        <a-image rotation="28 0 0" src="medias/manifacture.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/additive-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="-3.804 4 -1.236" rotation="0 72 0">
+        <a-image rotation="28 0 0" src="medias/big-data.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/data-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="-3.804 4 1.236" rotation="0 108 0">
+        <a-image rotation="28 0 0" src="medias/cloud.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/cloud-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="-2.351 4 3.236" rotation="0 144 0">
+        <a-image rotation="28 0 0" src="medias/internet-des-objets.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/objets-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="0 4 4" rotation="0 180 0">
+        <a-image rotation="28 0 0" src="medias/robot.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/robot-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="2.351 4 3.23" rotation="0 216 0">
+        <a-image rotation="28 0 0" src="medias/systeme-integration.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/integration-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="3.804 4 1.236" rotation="0 252 0">
+        <a-image rotation="28 0 0" src="medias/VR.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/vr-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="3.804 4 -1.236" rotation="0 288 0">
+        <a-image rotation="28 0 0" src="medias/cybersecurite.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/cyber-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity position="2.351 4 -3.236" rotation="0 324 0">
+        <a-image rotation="28 0 0" src="medias/simulation.png" material="shader: flat; transparent: true; side: double"></a-image>
+        <a-image position="0 -3 1.5" scale="1.5 3 1" src="medias/simulation-texte.png" material="opacity:0;shader: flat; transparent: true; side: double">
+          <a-animation attribute="material.opacity" begin="mouseenter" to="1" dur="500"></a-animation>
+          <a-animation attribute="material.opacity" begin="mouseleave" to="0" dur="500"></a-animation>
+        </a-image>
+      </a-entity>
+      <a-entity id="principal" position="0 0.8 -4">
+        <a-image src="medias/intro-texte.png" scale="1.5 3 1" material="shader: flat; transparent: true; side: double">
+        </a-image>
+      </a-entity>
+    </a-scene>
+
+
+
+  </body>
+
+  </html>

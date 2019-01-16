@@ -1,0 +1,35 @@
+h1,
+h2 {
+    font-family: Oswald, sans-serif;
+    font-size: 10rem;
+    width: max-content;
+    margin: 0;
+}
+
+body {
+    font-family: Ubuntu, serif;
+    font-size: 8rem;
+    color: white;
+}
+
+div.mycontent {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1500px;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: black;
+}
+
+div.mycontent:hover {
+    background-color: violet;
+}
+
+#intro {
+    padding-bottom: 500px;
+}

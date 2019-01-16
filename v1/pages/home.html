@@ -1,0 +1,41 @@
+<section class="accueil" id="1">
+    <h1>{{ message }}</h1>
+
+</section >
+<section id="3">
+    <h2>A propos de moi</h2>
+    <p ng-bind-html=presentation></p>
+</section>
+<section id="2">
+    <h2>Mes dernières réalisations</h2>
+    <ul>
+        <li ng-repeat="a in list"><h3><a href="#travaux/{{a.id}}">{{a.title.rendered}}</a><img src=" {{a.thumbnail}}" alt=""></h3></li>
+    </ul>
+    <a href="#travaux" class="btn">En savoir plus</a>
+    <script>
+        // code pour détecter le chargement des images puis ajouter une balise permettant leur dimensionnement
+        (function test() {
+            var listImg = document.querySelectorAll('img');
+            var i = 0;
+            var tester = true;
+            for (i = 0; i < listImg.length; i++) {
+                var imgH = listImg[i].height;
+                if (imgH === 0) {
+                    tester = false;
+                }
+            }
+            if (tester === false) {
+                setTimeout(test, 1000)
+            } else {
+                for (i = 0; i < listImg.length; i++) {
+                    imgH = listImg[i].height;
+                    var imgw = listImg[i].width;
+                    if (imgH < imgw) {
+                        listImg[i].classList.add('large');
+                    }
+                }
+            }
+        }());
+
+    </script>
+</section>

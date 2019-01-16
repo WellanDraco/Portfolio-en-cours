@@ -1,0 +1,24 @@
+<section class="contact" id="1">
+<h1>Me contacter</h1>
+    <ul>
+        <li><a href="" ng-click="show='telephone'" ><img ng-mouseover="hover='_hover'"  ng-mouseleave="hover=''" src="../css/img-interface/icon_telephone{{hover}}.png" alt="Téléphone"><br/>
+            Téléphone
+        </a></li>
+        <li><a href="" ng-click="show='mail'" ><img ng-mouseover="hover1='_hover'"  ng-mouseleave="hover1=''" src="../css/img-interface/icon_mail{{hover1}}.png" alt="Mail"><br/>
+            E-Mailing
+        </a></li>
+        <li><a href="" ng-click="show='fb'" ><img ng-mouseover="hover2='_hover'"  ng-mouseleave="hover2=''" src="../css/img-interface/icon_fb{{hover2}}.png" alt="Facebook"><br/>
+            Facebook
+        </a></li>
+        <li><a href="" ng-click="show='in'" ><img ng-mouseover="hover3='_hover'"  ng-mouseleave="hover3=''" src="../css/img-interface/icon_in{{hover3}}.png" alt="Linkedin"><br/>
+            Linkedin
+        </a></li>
+    </ul>
+    <div ng-show="show" class="alert" ng-click="show=''">
+        <div class="close" ng-click="show=''">X</div>
+        <a ng-show="show=='telephone'" href="tel:{{telephone}}">( depuis la France : +001) {{telephone}} poste 3149</a>
+        <a ng-show="show=='mail'" href="mailto:{{mail}}">{{mail}}</a>
+        <a ng-show="show=='fb'" href="https://{{fb}}">{{fb}}</a>
+        <a ng-show="show=='in'" href="https://{{in}}">{{in}}</a>
+    </div>
+</section>

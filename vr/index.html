@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
+  <script src="https://rawgit.com/chenzlabs/gearvr-controls/master/dist/aframe-gearvr-controls-component.min.js"></script>
+  <!-- Include the HTMl2Canvas library -->
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+
+  <!-- Input HTML text is inside the DIV -->
+  <style>
+    #content p {
+      margin: 0;
+      font-size: 2em;
+    }
+  </style>
+  <div id="content" style="color:white; width:max-content;display:flex;align-items:center;flex-direction:column;justify-content:flex-start">
+    <p>ceci est en</p>
+    <p>développement...</p>
+    <p>please dont juge me</p>
+    <p>dont juge me...</p>
+    <p>no more</p>
+  </div>
+
+  <a-scene style="position:absolute; top:0; left:0; width:100vw; height:100vh;">
+    <a-entity position="-4 0 -4.4" environment="preset:starry"></a-entity>
+    <a-entity position="0 1 -5" text__test="width:3;value:Ceci est en developpement... \n please dont juge me \n dont juge me...\n  no more;wrapCount:16;align:center"></a-entity>
+    <a-camera position="0 1.6 0" camera="userHeight:0.001" look-controls="" wasd-controls="" data-aframe-inspector-original-camera=""></a-camera>
+    <a-entity position="0 1.601 0" id="lefthand" auto-detect-controllers="hand:left" wasd-controls=""></a-entity>
+    <a-entity position="0 1.601 0" id="righthand" auto-detect-controllers="hand:right" wasd-controls=""></a-entity>
+  </a-scene>
+
+
+  <script>
+    html2canvas(document.getElementById("content"), {
+      onrendered: function(canvas) {
+        var screenshot = canvas.toDataURL("image/png");
+
+
+        var sceneEl = document.querySelector('a-scene');
+        var entityEl = document.createElement('a-image');
+
+        // Do `.setAttribute()`s to initialize the entity.
+        sceneEl.appendChild(entityEl);
+        entityEl.setAttribute("src", screenshot);
+        entityEl.setAttribute('geometry', {
+          height: canvas.height / 100,
+          width: canvas.width / 100,
+        });
+        entityEl.setAttribute('position', '-5 1 0');
+        entityEl.setAttribute('rotation', '0 90 0')
+      }
+    });
+  </script>
+</body>
+
+</html>

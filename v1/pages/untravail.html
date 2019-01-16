@@ -1,0 +1,9 @@
+<section class="singleTravaux">
+    <h1><a href="#travaux">Tous mes travaux > </a>{{ JobTitle }}</h1>
+    <div class="intro" ng-bind-html="exerpt"></div>
+    <figure>
+        <img src="{{ thumbnailimg.media_details.sizes.large.source_url }}" alt="{{thumbnailimg.alt_text}}">
+        <figcaption ng-bind-html="thumbnailimg.caption.rendered" >Page d'accueil de campus Sport</figcaption>
+    </figure>
+    <div class="maincontent" ng-bind-html="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eius, excepturi neque nobis optio. Alias animi corporis culpa, cumque dolores labore magni quae quas quibusdam quo quos temporibus vel.</div>
+</section>

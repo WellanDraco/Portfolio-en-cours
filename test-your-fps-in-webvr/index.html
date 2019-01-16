@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="fr-fr">
+
+<head>
+	<title>FPS VR Test | Arthur Mougin</title>
+	<meta title="Description" content="Test your FPS in VR">
+	<meta name="thumbnail" content="test-your-fps-in-webvr.PNG" />
+
+	<script src="https://aframe.io/releases/0.7.1/aframe.min.js">
+	</script>
+	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js">
+	</script>
+	<script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js">
+	</script>
+</head>
+
+<body>
+
+	<a-scene>
+		<a-camera position="-1 1.6 0" user-height="0.001">
+		</a-camera>
+		<a-entity rotation="0 0 0" environment="preset: forest;seed:6;lighting:point;lightPosition:-100 50 50;groundTexture:walkernoise;dressingOnPlayArea:0.010;">
+		</a-entity>
+		<a-entity position="1.5 1 -2" rotation="-10 -71 0" text="align:right;anchor:left;width:2;wrapCount:28;value:This WEBVR experience is made with A-Frame, stats.js, aframe-html-shader and aframe-environment-component.\n \n Arthur Mougin;">
+		</a-entity>
+		<a-entity position="-1 2.1 -3" text="align:left;anchor:center;transparent:false;wrapCount:11;width:1.4;value:Hello visitor !\n Let's see your framerate !">
+		</a-entity>
+		<a-entity position="-1 1.2 -3" scale="1.2 1.4 1" material="shader:html;target:.matarget;fps:1;ratio:width;" geometry="primitive:plane;">
+		</a-entity>
+		<a-entity position="-1 1.264 -3.5" scale="1.8 2.8 1" geometry="primitive:plane" material="color:black;">
+		</a-entity>
+	</a-scene>
+	<div class="matarget"></div>
+	<script>
+		javascript: (function() {
+			var script = document.createElement('script');
+			script.onload = function() {
+				var stats = new Stats();
+				document.body.appendChild(stats.dom);
+				requestAnimationFrame(function loop() {
+					stats.update();
+					requestAnimationFrame(loop)
+				});
+			};
+			script.src = 'stats.js';
+			document.head.appendChild(script);
+		})();
+	</script>
+</body>
+
+
+</html>
