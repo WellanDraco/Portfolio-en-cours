@@ -1,10 +1,35 @@
 <!DOCTYPE HTML>
-<html lang="fr-fr">
+<html lang="fr-fr" prefix="og: http://ogp.me/ns#"  itemscope itemtype="http://schema.org/Article">
 
 <head>
-	<title>FPS VR Test | Arthur Mougin</title>
-	<meta title="Description" content="Test your FPS in VR">
-	<meta name="thumbnail" content="test-your-fps-in-webvr.PNG" />
+	<title>FPS webVR | Arthur Mougin</title>
+	<!-- Metas generales + open graph -->
+	<meta property="og:type" content="website" />
+	<meta title="Description" property="og:description" content="Test your device's framerate in webVR."/>
+	<meta name="thumbnail" property="og:image" content="test-your-fps-in-webvr.PNG" />
+	<meta property="og:image:alt" content="vr view of the website with a medium framerate." />
+	<meta property="og:title" content="FPS webVR"/>
+	<meta property="og:site_name" content="FPS webVR | Arthur Mougin"/>
+	<meta property="author" content="Arthur Mougin"/>
+
+	<!-- schema.org pour google -->
+	<meta itemprop="name" content="FPS webVR | Arthur Mougin">
+	<meta itemprop="description" content="Test your device's framerate in webVR.">
+	<meta itemprop="image" content="test-your-fps-in-webvr.PNG">
+	<link rel="author" href="https://www.facebook.com/arthur.mougin.1" />
+
+	<!-- Twitter Card Meta 
+	<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@skyminds">
+<meta name="twitter:title" content="Page Title">
+<meta name="twitter:description" content="Page description : less than 200 characters">
+<meta name="twitter:creator" content="@skyminds">
+<meta name="twitter:url" content="Page URL" />
+<meta name="twitter:domain" content="domain URL" />
+ Twitter summary card with large image must be at least 280x150px
+<meta name="twitter:image:src" content="http://www.example.com/image.jpg">	
+	-->
+
 	<script src="aframe-0.8.2.min.js"></script>
 	<script src="environment-master.js"></script>
 	<script src="stats.js"></script>

@@ -1,389 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur Mougin</title>
-    <meta name="description" content="Le portfolio d'Arthur Mougin, étudiant en Multimédia et web passionné par la WebXR">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/typicons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jura">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-    <script type="application/ld+json">
-        {
-            "name": "Arthur",
-            "familyName": "Mougin",
-            "nationality": "Francais",
-            "jobTitle": "Web developer",
-            "award": "Bac S, DUT MMI Montbéliard",
-            "url": "arthur-moug.in",
-            "email": "arthur.mougin@live.fr",
-            "owns": "L'Univers tout entier.",
-            "@context": "http://schema.org",
-            "@type": "Person"
-            // réduire la description
-        }
-    </script>
+    <script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.3.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
+<body>
+<header><a href="#"><h1>Arthur Mougin</h1><p>Développeur web, webvr et plus...</p></a></header>
+<main>
+    <section id="intro">
+        <a-scene embedded background="color:white">
+            <a-assets>
+                <a-mixin id="dynamic" dynamic-body></a-mixin>
+            </a-assets>
+            <a-camera position="0 1.3 0"
+                      mouse-cursor
+                      look-controls="reverseMouseDrag:true"
+                      raycaster="objects:.interact"
 
-<body class="hideCode" onload="document.body.classList.remove('hideCode');document.querySelector('.onload').classList.add('hide')">
-    <div class="onload hide">
-    </div>
-    <script>
-        document.querySelector('.onload').classList.remove("hide");
-    </script>
-    <code>&lt;!DOCTYPE html&gt;
-        <br /> &lt;html lang="fr"&gt;
-        <br class="clearable" />
-        <br /> &lt;head&gt;
-        <br /><br  class="clearable"/>
-    </code>
-    <section id="head">
-        <div id="container" class="container background">
-            <div id="output" class="container background">
-            </div>
-        </div>
-        <div id="controls" class="controls">
-        </div>
-            
-        <input type="checkbox" id="check1" value="none" />
-        <label for="check1" class="diminutif">&lt;+++&gt;</label><!--
-        --><div class="infoflotante">&lt;meta charset="UTF-8"&gt;
-            <br /> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            <br /> &lt;link rel="stylesheet" href="styles/style.css"&gt;
-            <br /> 
-            <div class="diminutif" style="padding-left:0em;">&lt;---&gt;</div><!--
-        --></div><!--
-        --><br /><!--
-        --><br />
-        <h2>Arthur Mougin</h2>
-        <br />
-        <p id="intro">Le&nbsp;portfolio d'Arthur Mougin, étudiant en Multimédia et&nbsp;web passionné par la&nbsp;WebXR</p>
-        <br />
-        <label for="check2" class="comment">Présentation rapide ici</label><!--
-        --><code class="pasDeMarge"><br/>&lt;script type="application/ld+json"&gt;</code><!--
-        --><input type="checkbox" id="check2"><!--
-        --><div id="description"><!--
-        --><label for="check2" class="alternative">...</label><!--
-        --><div class="descriptionContenu">
-                <img class="" src="assets/img/Arthur-mougin.jpg" alt="Photo d'Arthur Mougin" width="250" >
-                <dl>
-                    <dt>name</dt>
-                    <dd>Arthur</dd>
-                    <dt>familyName</dt>
-                    <dd>Mougin</dd>
-                    <dt>nationality</dt>
-                    <dd>Francais</dd>
-                    <dt>jobTitle</dt>
-                    <dd>Web developer</dd>
-                    <dt>award</dt>
-                    <dd>Bac&nbsp;S, DUT&nbsp;MMI&nbsp;Montbéliard</dd>
-                    <dt>url</dt>
-                    <dd><!--
-                    --><a href="https://arthur-moug.in">arthur-moug.in</a><!--
-                    --></dd>
-                    <dt>email</dt>
-                    <dd><!--
-                    --><a href="mailto:arthur.mougin@live.fr">arthur.mougin@live.fr</a><!--
-                    --></dd>
-                    <dt>owns</dt>
-                    <dd>L'Univers&nbsp;tout&nbsp;entier.</dd>
-                    <dt>@context</dt>
-                    <dd>http://schema.org</dd>
-                    <dt>@type</dt>
-                    <dd>Person</dd>
-                </dl>
-                <label for="check2" class="CommentJS">&nbsp;réduire la description</label>
-            </div><!--
-        --></div><!--
-        --><code>&lt;/script&gt;</code>
+            ></a-camera>
+            <a-box class="interact" mixin="dynamic" position="-1 1 -3" color="#CAD2C5"></a-box>
+            <a-sphere class="interact" mixin="dynamic" position="0.6 2 -2.5" scale="0.5 0.5 0.5" color="#84A98C"></a-sphere>
+            <a-plane static-body position="0 -0.1 0" color="white" rotation="-90 0 0" scale="1000 1000 1000"></a-plane>
+            <a-entity id="environment"
+                      environment=" preset:starry;
+                                    ground:hills;
+                                    groundYScale:20;
+                                    playArea:0.92;
+                                    seed:2"
+            ></a-entity>
+        </a-scene>
     </section>
-    <pre><code>
-&lt;/head&gt;
-&lt;body&gt;<br class="clearable"/>
-            &lt;header&gt;
-    </code></pre>
-    <header>
-        <h1><!--
-            --><a href="#">Arthur&nbsp;Mougin</a><!--
-        --></h1>
-        <br class="clearable" />
-        <ul class="list-unstyled">
-            <li><!--
-                --><a href="#travaux">Mes&nbsp;travaux</a><!--
-            --></li>
-            <li><!--
-                --><a href="#contact">Me&nbsp;contacter</a><!--
-            --></li>
-        </ul>
-    </header>
-    <pre><code>
-            &lt;/header&gt;
-            &lt;main id="1"&gt;</code></pre>
-    <main id="travaux"><br class="clearable"/>
-        <code>&lt;section id="realisations-favorites"&gt;
-            <br />
-            <br />
-        </code>
-        <section id="favoris">
-            <h2>Mes travaux favoris</h2>
-            <br />
-            <div class="list-work">
-                <article>
-                    <input type="checkbox" id="checkArticle1">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/premiuminnovation.jpg&quot;);z-index:-3;">
-                            <h2>Premium Innovation</h2>
-                        </header>
-                        <label for="checkArticle1">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Stage de fin d'études</h3>
-                            <p>L'objectif était un site promotionnel de type BtoB, Je me suis chargé du design et de l'intégration en tant que thème Wordpress. Ensuite j'ai
-                                développé une bulle de réalité virtuelle Web pour ce même site.</p>
-                            <p>Le site est disponible à l'url&nbsp;
-                                <a href="https://bit.ly/premiuminnovation" target="_blank">premiuminnovation.com</a>
-                            </p>
-                            <label for="checkArticle1">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <input type="checkbox" id="checkArticle2">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/somnum.jpg&quot;);z-index:-3;">
-                            <h2>Somnum</h2>
-                        </header>
-                        <label for="checkArticle2">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Application mobile en projet collectif</h3>
-                            <p>Durant ce Projet, j'ai développé des minijeux en js, intégré le site sous angularJS puis sous Phonegap. Ce projet m'a permis de réaliser des tests utilisateur concret. L'appliation a été présentée publiquement durant une soirée.</p>
-                            <p>La présentation est disponible ici :&nbsp;
-                                <a href="https://bit.ly/SOMNUM-presentation" target="_blank">Présentation</a>&nbsp;et le code source ici :&nbsp;
-                                <a href="https://bit.ly/SOMNUM-versionspubliques">Code source.</a>
-                            </p>
-                            <label for="checkArticle2">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <input type="checkbox" id="checkArticle3">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/stanleykubrick.jpg&quot;);z-index:-3;">
-                            <h2>Stanley Kubrick</h2>
-                        </header>
-                        <label for="checkArticle3">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Examen de développement sur deux jours</h3>
-                            <p>Cet examen consistait à concevoir et développer un site à propos d'un réalisateur en utilisant
-                                Angularjs et IMDB.</p>
-                            <p>Le site peut être présenté sur demande.</p>
-                            <label
-                                for="checkArticle3">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section id="all">
-        <pre style="margin-left:-3em"><code>
-&lt;/section&gt;
-&lt;section id="Dernieres-realisations"&gt;
-
-</code></pre><h2 >Mes&nbsp;Dernières réalisations</h3>
-            <code><br/>&lt;!-- classés entre <label for="checkWeb">Web,</label> <label for="checkDesign">Design,</label> <label for="checkCom">Communication,</label> <label for="checkVideo">Vidéo,</label> <label for="checkVR">Réalité virtuelle</label> ou&nbsp;encore <label for="checkMobile">Applications.</label> --&gt;<br /><br />
-            </code>
-        
-            <input type="checkbox" id="checkMobile">
-            <input type="checkbox" id="checkWeb">
-            <input type="checkbox" id="checkDesign">
-            <input type="checkbox" id="checkCom">
-            <input type="checkbox" id="checkVideo">
-            <input type="checkbox" id="checkVR">
-            <div class="list-work" style="">
-                <article class="design com web vr">
-                    <input type="checkbox" id="checkArticle8">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/premiuminnovation.jpg&quot;);z-index:-3;">
-                            <h2>Premium Innovation</h2>
-                        </header>
-                        <label for="checkArticle8">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Stage de fin d'études</h3>
-                            <p>L'objectif était un site promotionnel de type BtoB, Je me suis chargé du design et de l'intégration en tant que thème Wordpress. Ensuite j'ai
-                                développé une bulle de réalité virtuelle Web pour ce même site.</p>
-                            <p>Il est disponible à l'url&nbsp;
-                                <a href="https://bit.ly/premiuminnovation" target="_blank">premiuminnovation.com</a>
-                            </p>
-                            <label for="checkArticle8">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article class="web mobile">
-                    <input type="checkbox" id="checkArticle9">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/somnum.jpg&quot;);z-index:-3;">
-                            <h2>Somnum</h2>
-                        </header>
-                        <label for="checkArticle9">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Application mobile en projet collectif</h3>
-                            <p>Durant ce Projet, j'ai développé des minijeux en js, intégré le site sous angularJS puis sous Phonegap. Ce projet m'a permis de réaliser des tests utilisateur concret. L'appliation a été présentée publiquement durant une soirée.</p>
-                            <p>La présentation est disponible ici :&nbsp;
-                                <a href="https://bit.ly/SOMNUM-presentation" target="_blank">Présentation</a>&nbsp;et le code source ici :&nbsp;
-                                <a href="https://bit.ly/SOMNUM-versionspubliques">Code source.</a>
-                            </p>
-                            <label for="checkArticle9">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article class="design web">
-                    <input type="checkbox" id="checkArticle10">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/stanleykubrick.jpg&quot;);z-index:-3;">
-                            <h2>Stanley Kubrick</h2>
-                        </header>
-                        <label for="checkArticle10">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Examen de développement sur deux jours</h3>
-                            <p>Cet examen consistait à concevoir et développer un site à propos d'un réalisateur en utilisant
-                                Angularjs et IMDB.</p>
-                            <p>Le site peut être présenté sur demande.</p>
-                            <label
-                                for="checkArticle10">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article class="video web">
-                    <input type="checkbox" id="checkArticle4">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/mmiscare.jpg&quot;);z-index:-3;">
-                            <h2>MMI Scare</h2>
-                        </header>
-                        <label for="checkArticle4">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Vidéo interactive sur Youtube</h3>
-                            <p>En trinome, nous avons écrit, tourné et monté une série de vidéos pour youtube proposant une
-                                expérience globale intéractive.</p>
-                            <p>La vidéo démarre ici : &nbsp;
-                                <a href="https://youtu.be/9t3Giz1UGzc" target="_blank">MMI SCARE</a>
-                            </p>
-                            <label for="checkArticle4">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article class="web com">
-                    <input type="checkbox" id="checkArticle5">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/campussport.jpg&quot;);">
-                            <h2>Campus Sport</h2>
-                        </header>
-                        <label for="checkArticle5">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Commande et client réelle</h3>
-                            <p>Durant ce projet, j'ai dut diriger une équipe pour répondre à la commande client et j'ai intégré
-                                le thème Wordpress. Nous avons, tout au long du trojet, été en relation avec le client par
-                                des retours mails et des rendez-vous réguliers.
-                            </p>
-                            <p>Le site peut être présenté sur demande.</p>
-                            <label for="checkArticle5">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article class="video com">
-                    <input type="checkbox" id="checkArticle6">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/50ansIUT.jpg&quot;);z-index:-3;">
-                            <h2>Vidéo des 50 ans</h2>
-                        </header>
-                        <label for="checkArticle6">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Interview et micro-trottoir</h3>
-                            <p>En équipe, nous avons préparé, réalisé et monté des interviews autour des 50 ans de l'IUT de Belfort
-                                Montbéliard.</p>
-                            <p>La vidéo n'est plus disponible.</p>
-                            <label for="checkArticle6">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-                <article class="com web design">
-                    <input type="checkbox" id="checkArticle7">
-                    <div>
-                        <header style="background-image:url(&quot;assets/img/kwaibu.jpg&quot;);z-index:-3;">
-                            <h2>Kwaibu</h2>
-                        </header>
-                        <label for="checkArticle7">En savoir +</label>
-                        <div class="ensavoirplus" style="z-index:1;">
-                            <h3>Application web Vanilla</h3>
-                            <p>En groupe, nous avons créé une identité numérique sur un sujet donné : une application aidant
-                                à entretenir ses plantes. J'ai ensuite intégré l'application en languages web et PHP et MySQL.</p>
-                            <p>Le site peut être présenté sur demande.</p>
-                            <label
-                                for="checkArticle7">Réduire</label>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <code>
-            <br />&lt;/section&gt;
-        </code>
-    </main>
-<pre><code  ><br class="clearable"/>    &lt;/main&gt;
-    &lt;footer id="2"&gt;</code></pre>
-    <br class="clearable"/>
-    <footer>
-        <section id="contact"><!--
-            --><br />
-            <br />
-            <h2>Vous pouvez me contacter par&nbsp;ici&nbsp;:</h2>
-            <br />
-            <ul class="list-unstyled">
-                <li class="Messenger"><!--
-                    --><a href="http://bit.ly/2s85Tiz" target="_blank"><i class="typcn typcn-message" style="color:rgb(235,81,72);"></i> Messenger</a><!--
-                --></li>
-                <li class="Linkedin"><!--
-                    --><a href="http://bit.ly/2klnosi" target="_blank"><i class="typcn typcn-social-linkedin" style="color:rgb(235,81,72);"></i> Linkedin</a><!--
-                --></li>
-                <li class="StumbleUpon"><!--
-                    --><a href="https://stumble.it/2KMV5hM" target="_blank"><i class="typcn typcn-device-desktop" style="color:rgb(235,81,72);"></i> StumbleUpon (discontinued)</a><!--
-                --></li>
-                <li class="Codepen"><!--
-                    --><a href="http://bit.ly/2IYv8yB" target="_blank"><i class="typcn typcn-code" style="color:rgb(235,81,72);"></i> Codepen.io</a><!--
-                --></li>
-                <li class="Github"><!--
-                     --><a href="http://bit.ly/2KOyrW8" target="_blank"><i class="typcn typcn-social-github" style="color:rgb(235,81,72);"></i> Github</a><!--
-                --></li>
-            </ul>
-            <br />
-        </section>
-        <div id="legal"><!--
-            --><br />
-            <br />
-            <p>Les deux codes HTML sont validés au&nbsp;W3C.</p>
-            <br />
-            <p>Ce site est noscript-friendly.</p>
-            <br />
-            <p>La majorité des url sont raccourcies grâce&nbsp;à&nbsp;bit.ly.</p>
-            <br />
-            <p>L'animation graphique sur la version rendue est publiée sous la licence MIT et Copyright (c) 2014 Maksim Surguy. Pour plus de détails, regardez le fichier <a href="assets/js/animation.js">animation.js.</a></p>
-            <br />
-            <p>Le design et développement du site a été réalisé avec&nbsp;
-                <i class="typcn typcn-heart" style="color:rgb(235,81,72);"></i>&nbsp;et&nbsp;
-                <i class="typcn typcn-flash" style="color:rgb(235,81,72);"></i>&nbsp;par Arthur Mougin. La photo de profil circulaire a été prise par&nbsp;
-                <a href="https://www.facebook.com/cegepdematane/photos/t.100003000605526/10156138872794380/?type=3&amp;theater">Chloé Duval</a>&nbsp;et modifiée par Arthur Mougin (floutage).</p>
-            <br />
-        </div>
-        <button class="btn btn-danger btn-lg" type="button" onclick="document.querySelector('body').classList.toggle('hideCode');window.dispatchEvent(new Event('resize'));">RENDER<i class="typcn typcn-trash" style="color:rgb(235,81,72);"></i></button>
-    </footer>
-<pre><code><br class="clearable"/>        &lt;/footer "&gt;
-        &lt;script src="script/script.js"&gt;&lt;/script&gt;
-&lt;/body "&gt;
-&lt;/html "&gt;</code></pre>
-    <script src="assets/js/stickyfill.js"></script>
-    <script src="assets/js/animation.js" async></script>
-    <script src="assets/js/script.js"></script>
+</main>
+<footer></footer>
 </body>
-
 </html>
