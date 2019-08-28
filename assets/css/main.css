@@ -21,7 +21,7 @@ body {
 
 header {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -32,11 +32,41 @@ header a,header a:hover {
     text-decoration: none;
 }
 
+main {
+    width:100%;
+}
+
 section {
-    min-height: 100vh;
+    min-height: 75vh;
+}
+
+#intro {
+    display: flex;
+    justify-content: center;
 }
 
 a-scene {
-    width : 100vw;
-    height : 100vh;
+    width : 100%;
+    height : 70vh;
+    position: absolute;
+    /**z-index: -1;*/
+}
+
+#choixvr {
+    min-width: 300px;
+    height: 150px;
+    width: 25%;
+    max-width: 600px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3% 6%;
+    margin-top: 20%;
+    background: #2f3e468a;
+}
+
+#choixvr a {
+    color:#CAD2C5;
 }
