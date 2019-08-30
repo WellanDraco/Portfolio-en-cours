@@ -4,10 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur Mougin</title>
+    <link rel="stylesheet" href="assets/css/main.css">
     <script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
     <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+
+    <script src="assets/js/pannel-inserter.js"></script>
+    <script src="assets/js/a-progressive-controls.js"></script>
+    <script src="assets/js/a-custom-caroussel.js"></script>
+
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://unpkg.com/browse/aframe-extras@6.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+
+
     <!--<script src="assets/js/follow-cursor.js"></script>-->
 </head>
 <body>
@@ -16,13 +26,19 @@
     <section id="intro">
         <a-scene embedded>
             <a-assets>
-                <a-mixin id="dynamic" dynamic-body></a-mixin>
+                <a-mixin id="p" a-geometry="primitive:plane" ></a-mixin>
             </a-assets>
-            <a-entity id="camera-position" position="0 1.3 0" rotation="0 0 0"
-            ><a-entity camera look-controls="reverseMouseDrag:true"></a-entity>
+
+            <a-entity id="camera-rig" position="0 1.3 0" rotation="0 0 0">
+                <a-entity id="camera" camera look-controls="reverseMouseDrag:true"></a-entity>
+                <a-entity id="hand-holder"></a-entity>
             </a-entity>
 
-            <a-plane position="0 -0.1 0" color="white" rotation="-90 0 0" scale="1000 1000 1000"></a-plane>
+            <a-custom-caroussel>
+                <a-entity></a-entity>
+                <a-entity></a-entity>
+            </a-custom-caroussel>
+
             <a-entity id="environment"
                       environment=" preset:starry;
                                     ground:hills;
