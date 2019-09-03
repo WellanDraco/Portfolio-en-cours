@@ -4,11 +4,7 @@ AFRAME.registerComponent('pannelinserter',{
            type:'string'
        }
     },
-    init: function(){
-
-    },
-
-    remove:function(){
-
+    update : function(){
+        console.log(this);
     }
 });
