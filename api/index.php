@@ -24,7 +24,20 @@ function APICall($url){
     return $retour;
 }
 
-$jsonExport = json_encode(array("travaux" => APICall($url), "pages" => APICall($url2)));
+function GetContent($url,$url2){
+    $travaux = APICall($url);
+    $pages = APICall($url2);
+    $filename = "backup.txt";
+    if($travaux === false || $pages === false){
+        $content = file_get_contents($filename);
+    } else {
+        $content = json_encode(array("travaux" => $travaux, "pages" => $pages));
+        file_put_contents($filename,$content);
+    }
+    return $content;
+}
+
+$jsonExport = GetContent($url,$url2);
 
 echo $jsonExport;
 
