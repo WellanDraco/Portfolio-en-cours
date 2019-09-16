@@ -28,26 +28,33 @@ function GetContent($url,$url2){
     $filename = "backup.txt";
     session_start();
 
-    if(!$_SESSION['Existe']) {
+    $date = new DateTime();
+    echo $date->getTimestamp();
 
-        $_SESSION['Existe'] = true;
 
-        echo "coucou1";
+    if(!$_SESSION['Update']) {
+
+        $_SESSION['Update'] = true;
+
         $fileContent = file_get_contents($filename);
         $content = $fileContent;
 
     }
     else {
 
-        echo "coucou2";
 
         $travaux = APICall($url);
         $pages = APICall($url2);
+
         if ($travaux === false || $pages === false) {
+
             $content = file_get_contents($filename);
+
         } else {
+
             $content = json_encode(array("travaux" => $travaux, "pages" => $pages));
             file_put_contents($filename, $content);
+
         }
 
     }
