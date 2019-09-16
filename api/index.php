@@ -54,7 +54,8 @@ function GetContent(){
 
             $content = file_get_contents($filename);
 
-        } else {
+        }
+        else {
 
             $content = json_encode(array(
                 "travaux" => $travaux,
