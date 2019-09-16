@@ -3,6 +3,8 @@
 header("Content-Type: application/json; charset=UTF-8");
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
+$url3 = "https://back.arthur-moug.in/wp-json/wp/v2/media";
+$url4 = "https://back.arthur-moug.in/wp-json/wp/v2/posts";
 
 function APICall($url){
     //https://support.ladesk.com/061754-How-to-make-REST-calls-in-PHP
@@ -24,7 +26,7 @@ function APICall($url){
     return $retour;
 }
 
-function GetContent($url,$url2){
+function GetContent(){
     $filename = "backup.txt";
 
     /**
@@ -43,16 +45,24 @@ function GetContent($url,$url2){
 
     if(isset($_GET['update'])) {
 
-        $travaux = APICall($url);
-        $pages = APICall($url2);
+        $travaux = APICall("https://back.arthur-moug.in/wp-json/wp/v2/travaux");
+        $pages = APICall("https://back.arthur-moug.in/wp-json/wp/v2/pages");
+        $medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
+        $posts = APICall("https://back.arthur-moug.in/wp-json/wp/v2/posts");
 
-        if ($travaux === false || $pages === false) {
+        if ($travaux === false || $pages === false || $medias === false || $posts === false) {
 
             $content = file_get_contents($filename);
 
         } else {
 
-            $content = json_encode(array("travaux" => $travaux, "pages" => $pages));
+            $content = json_encode(array(
+                "travaux" => $travaux,
+                "pages" => $pages,
+                "medias" => $medias,
+                "posts" => $posts,
+
+            ));
             file_put_contents($filename, $content);
 
         }
@@ -67,7 +77,7 @@ function GetContent($url,$url2){
     return $content;
 }
 
-$jsonExport = GetContent($url,$url2);
+$jsonExport = GetContent();
 
 echo $jsonExport;
 
