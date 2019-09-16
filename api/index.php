@@ -1,9 +1,9 @@
 <?php
-echo "test\n";
+
 header("Content-Type: application/json; charset=UTF-8");
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
-echo "test\n";
+
 function APICall($url){
     //https://support.ladesk.com/061754-How-to-make-REST-calls-in-PHP
     $curl = curl_init($url);
@@ -23,10 +23,9 @@ function APICall($url){
     curl_close($curl);
     return $retour;
 }
-echo "test\n";
-$jsonExport = array("travaux" => APICall($url), "pages" => APICall($url2));
 
-echo "test\n";
-//var_dump($jsonExport);
+$jsonExport = json_encode(array("travaux" => APICall($url), "pages" => APICall($url2)));
+
+var_dump($jsonExport);
 
 
