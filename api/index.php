@@ -25,20 +25,37 @@ function APICall($url){
 }
 
 function GetContent($url,$url2){
-    $travaux = APICall($url);
-    $pages = APICall($url2);
     $filename = "backup.txt";
-    if($travaux === false || $pages === false){
-        $content = file_get_contents($filename);
-    } else {
-        $content = json_encode(array("travaux" => $travaux, "pages" => $pages));
-        file_put_contents($filename,$content);
+    session_start();
+
+    if(!$_SESSION['Existe']) {
+
+        $_SESSION['Existe'] = true;
+
+        echo "coucou1";
+        $fileContent = file_get_contents($filename);
+        $content = $fileContent;
+
+    }
+    else {
+
+        echo "coucou2";
+
+        $travaux = APICall($url);
+        $pages = APICall($url2);
+        if ($travaux === false || $pages === false) {
+            $content = file_get_contents($filename);
+        } else {
+            $content = json_encode(array("travaux" => $travaux, "pages" => $pages));
+            file_put_contents($filename, $content);
+        }
+
     }
     return $content;
 }
 
 $jsonExport = GetContent($url,$url2);
 
-echo $jsonExport;
+//echo $jsonExport;
 
 
