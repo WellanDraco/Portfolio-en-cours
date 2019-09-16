@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5062b6b9-fc11-491c-aeef-87f9477d5de8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/flat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/flat.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/flat.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,13 +17,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" synchronizationState="DONT_SYNCHRONIZE" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
               <folding>
                 <element signature="n#a-scene#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#a-entity#1;n#a-scene#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -30,14 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/flat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+            <state relative-caret-position="44">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="58" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#importFromRequest#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -45,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/pannel-inserter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="154">
               <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
@@ -54,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
+            <state relative-caret-position="1144">
               <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
             </state>
           </provider>
@@ -76,6 +88,7 @@
       <find>rotation</find>
       <find>dynamic</find>
       <find>style</find>
+      <find>curl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,6 +106,7 @@
         <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/js/flat.js" />
+        <option value="$PROJECT_DIR$/api/index.php" />
       </list>
     </option>
   </component>
@@ -102,9 +116,17 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="D:/Mes Installations/php-7.2.10-nts-Win32-VC15-x64" />
+    </include_path>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-15" />
-    <option name="width" value="1948" />
+    <option name="width" value="2385" />
     <option name="height" value="2175" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -124,24 +146,7 @@
             <path>
               <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
               <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="clemence" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -154,12 +159,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testserv" />
+    <property name="last_opened_file_path" value="D:/Mes Installations/php-7.2.10-nts-Win32-VC15-x64" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -178,6 +183,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/api/index.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.index.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\arthur\AppData\Roaming\Subversion</configuration>
@@ -200,25 +215,26 @@
       <workItem from="1566984951700" duration="20270000" />
       <workItem from="1567688976940" duration="596000" />
       <workItem from="1568363545541" duration="1001000" />
-      <workItem from="1568374181889" duration="1979000" />
+      <workItem from="1568374181889" duration="4038000" />
+      <workItem from="1568381167458" duration="10537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56767000" />
+    <option name="totallyTimeSpent" value="69363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="779" height="870" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="0" width="953" height="870" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2033195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31751412" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="PHP-CGI Server" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5377095" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7078652" weight="0.39944133" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -227,8 +243,8 @@
       <window_info anchor="bottom" id="GraphQL" order="9" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.053072624" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.29213482" side_tool="true" weight="0.39944133" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -293,24 +309,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="20">
+          <caret line="16900" column="4" selection-start-line="16900" selection-start-column="4" selection-end-line="16900" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/pannel-inserter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="154">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding>
             <element signature="n#a-scene#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#a-entity#1;n#a-scene#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" />
@@ -320,11 +343,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/flat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        <state relative-caret-position="44">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="58" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#importFromRequest#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
         </state>
       </provider>
     </entry>
