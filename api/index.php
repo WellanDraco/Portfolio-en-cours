@@ -25,6 +25,7 @@ function APICall($url){
 
 $jsonExport = array("travaux" => APICall($url), "pages" => APICall($url2));
 
+echo "test";
 var_dump($jsonExport);
 
 
