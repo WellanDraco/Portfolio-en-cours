@@ -9,14 +9,20 @@ function APICall($url){
     curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
     $curl_reponse = curl_exec($curl);
     if($curl_reponse === false) {
-        $retour = curl_getinfo($curl);
+        $retour = false;
     } else {
-        $retour = json_decode($curl_reponse);
+        $decoded = json_decode($curl_reponse);
+        if(isset($decoded->response->status) && $decoded->response->status == 'ERROR'){
+            $retour = false;
+        }
+        else {
+            $retour = $decoded;
+        }
     }
     curl_close($curl);
     return $retour;
 }
 
-var_dump(APICall($url));
+echo APICall($url);
 
 
