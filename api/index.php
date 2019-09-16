@@ -69,6 +69,6 @@ function GetContent($url,$url2){
 
 $jsonExport = GetContent($url,$url2);
 
-//echo $jsonExport;
+echo $jsonExport;
 
 
