@@ -28,20 +28,18 @@ function GetContent($url,$url2){
     $filename = "backup.txt";
     session_start();
 
-    $date = new DateTime();
-    echo $date->getTimestamp();
+    var_dump($_GET);
 
+    if(!$_SESSION['FirstLog']) {
 
-    if(!$_SESSION['Update']) {
+        $_SESSION['FirstLog'] = true;
 
-        $_SESSION['Update'] = true;
 
         $fileContent = file_get_contents($filename);
         $content = $fileContent;
 
     }
     else {
-
 
         $travaux = APICall($url);
         $pages = APICall($url2);
