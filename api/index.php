@@ -26,20 +26,22 @@ function APICall($url){
 
 function GetContent($url,$url2){
     $filename = "backup.txt";
-    session_start();
 
-    var_dump($_GET);
+    /**
+     * Deux méthodes existent pour obtenir le contenu :
+     *
+     *  1 : aller chercher le tout auprès de l'API wordpress
+     *      + Est à jour et update l'option 2
+     *      - Lent et risque de rater
+     *  2 : aller chercher le contenu prémaché dans le fichier de backup
+     *      + fiable et rapide
+     *      - peut ne pas etre à jour
+     *
+     * l'option 1 sera uniquement utilisée par des mises à jour serveur
+     */
 
-    if(!$_SESSION['FirstLog'] || isset($_GET['update'])) {
-        echo "updated";
-        $_SESSION['FirstLog'] = true;
 
-
-        $fileContent = file_get_contents($filename);
-        $content = $fileContent;
-
-    }
-    else {
+    if(isset($_GET['update'])) {
 
         $travaux = APICall($url);
         $pages = APICall($url2);
@@ -54,6 +56,12 @@ function GetContent($url,$url2){
             file_put_contents($filename, $content);
 
         }
+
+    }
+    else {
+
+        $fileContent = file_get_contents($filename);
+        $content = $fileContent;
 
     }
     return $content;
