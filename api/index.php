@@ -23,6 +23,8 @@ function APICall($url){
     return $retour;
 }
 
-echo APICall($url);
+$jsonExport = array("travaux" => APICall($url), "pages" => APICall($url2));
+
+var_dump($jsonExport);
 
 
