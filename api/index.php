@@ -30,8 +30,8 @@ function GetContent($url,$url2){
 
     var_dump($_GET);
 
-    if(!$_SESSION['FirstLog']) {
-
+    if(!$_SESSION['FirstLog'] || $_GET['update']) {
+        echo "updated";
         $_SESSION['FirstLog'] = true;
 
 
