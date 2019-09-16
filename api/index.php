@@ -1,6 +1,6 @@
 <?php
 echo "test\n";
-//header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
 echo "test\n";
@@ -27,6 +27,6 @@ echo "test\n";
 $jsonExport = array("travaux" => APICall($url), "pages" => APICall($url2));
 
 echo "test\n";
-var_dump($jsonExport);
+//var_dump($jsonExport);
 
 
