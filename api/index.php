@@ -1,6 +1,6 @@
 <?php
 
-header("Content-Type: application/json; charset=UTF-8; Access-Control-Allow-Origin: arthur-moug.in");
+header("Content-Type: application/json; charset=UTF-8; Access-Control-Allow-Origin: *");
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
 $url3 = "https://back.arthur-moug.in/wp-json/wp/v2/media";
