@@ -28,6 +28,14 @@ function APICall($url){
     return $retour;
 }
 
+function FilterImages($content){
+    $urlPattern = '/https://back.arthur-moug.in/wp-content/uploads/.+\.[(png)(jpg)]';
+    preg_match($urlPattern,$content,$return);
+    var_dump($return);
+    echo "\n";
+    return $content;
+}
+
 function GetContent(){
     $filename = "backup.txt";
 
@@ -64,8 +72,10 @@ function GetContent(){
                 "pages" => $pages,
                 "medias" => $medias,
                 "posts" => $posts,
-
             ));
+
+            $content = FilterImages($content);
+
             file_put_contents($filename, $content);
 
         }
