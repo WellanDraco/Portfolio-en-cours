@@ -39,11 +39,30 @@
         //render "contact"
         var contactjson = json.pages.find(obj => obj.slug === 'contact');
         renderOne(contactjson,document.getElementById('contact'),true);
+
+        var buttons = document.querySelectorAll(".excerpt button");
+        console.log(buttons);
+
+        for(let i = 0;i<buttons.length;i++){
+            let el = buttons[i];
+            el.addEventListener('click', showmore);
+
+        }
     }
 
+    function showmore(event){
+        console.log("click",event);
+        let e = event.target;
+        let excerpt = e.parentNode;
+        let content = e.parentNode.nextSibling;
+        excerpt.classList.toggle('show');
+        excerpt.classList.toggle('hide');
+        content.classList.toggle('show');
+        content.classList.toggle('hide');
+    };
 
     function renderOne(article,DadTarget,removeOldContent){
-        console.log(article,DadTarget);
+        //console.log(article,DadTarget);
 
         //logic
         let UseExcerpt = (article.excerpt.rendered && (article.excerpt.rendered.trim() !== article.content.rendered.trim()));
@@ -177,7 +196,7 @@
 
         if(UseExcerpt){
 
-            AC+="<div class='excerpt show'>" + article.excerpt.rendered + "<button onclick='showmore()'>en savoir Plus</button></div>";
+            AC+="<div class='excerpt show'>" + article.excerpt.rendered + "<button>en savoir Plus</button></div>";
             AC+="<div class='content hide'>"+ contentHTML + "</div>";
 
         }
@@ -190,7 +209,7 @@
 
 
         AC += "</article></div>";
-        console.log(AC);
+        //console.log(AC);
 
         if(removeOldContent){
             DadTarget.innerHTML = "";
@@ -198,13 +217,11 @@
         const parser = new DOMParser();
         var DomAC = parser.parseFromString(AC,"text/html");
         var realAC = DomAC.querySelector('article');
-        console.log(realAC);
+        //console.log(realAC);
         DadTarget.appendChild(realAC);
     }
     
-    function showmore(){
-        console.log("showmore");
-    };
+
 
 
 })();
