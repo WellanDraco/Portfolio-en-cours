@@ -30,7 +30,7 @@ function APICall($url){
 
 function FilterImages($content){
 
-    $urlPattern = '(/https:\/\/back.arthur-moug.in\/wp-content\/uploads\/).+\.[(png)(jpg)]';
+    $urlPattern = '(/https:\/\/back.arthur-moug.in\/wp-content\/uploads\/).+\.';//[(png)(jpg)]
     if(preg_match($urlPattern,$content,$return)){
         echo "A match was found.";
     } else {
@@ -38,7 +38,7 @@ function FilterImages($content){
     }
 
     print_r($return);
-    echo "\n";
+    echo "\n\n\n";
     echo $content;
     return $content;
 }
