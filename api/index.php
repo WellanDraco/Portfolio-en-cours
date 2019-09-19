@@ -31,7 +31,12 @@ function APICall($url){
 function FilterImages($content){
 
     $urlPattern = '(/https:\/\/back.arthur-moug.in\/wp-content\/uploads\/).+\.[(png)(jpg)]';
-    preg_match($urlPattern,$content,$return);
+    if(preg_match($urlPattern,$content,$return)){
+        echo "A match was found.";
+    } else {
+        echo "A match was not found.";
+    }
+
     print_r($return);
     echo "\n";
     echo $content;
