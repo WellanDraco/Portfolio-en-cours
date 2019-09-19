@@ -29,10 +29,12 @@ function APICall($url){
 }
 
 function FilterImages($content){
+
     $urlPattern = '/https:\/\/back.arthur-moug.in\/wp-content\/uploads\/.+\.[(png)(jpg)]';
     preg_match($urlPattern,$content,$return);
     var_dump($return);
     echo "\n";
+    echo $content;
     return $content;
 }
 
@@ -92,6 +94,6 @@ function GetContent(){
 
 $jsonExport = GetContent();
 
-echo $jsonExport;
+//echo $jsonExport;
 
 
