@@ -30,14 +30,15 @@ function APICall($url){
 
 function FilterImages($content){
 
-    $urlPattern = '(/back/)';//\.arthur-moug\.in.+\.[(png)(jpg)]
+    $urlPattern = '/back\.arthur-moug\.in/';//.+\.[(png)(jpg)]
     if(preg_match($urlPattern,$content,$return)){
         echo "A match was found.\n";
+        print_r($return);
     } else {
         echo "A match was not found.\n";
     }
 
-    print_r($return);
+
     echo "\n\n\n";
     echo $content;
     return $content;
