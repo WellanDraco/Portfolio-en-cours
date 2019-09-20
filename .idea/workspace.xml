@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5062b6b9-fc11-491c-aeef-87f9477d5de8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,12 +21,7 @@
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
-              <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-              <folding>
-                <element signature="n#APICall#0;n#!!top" />
-                <element signature="e#1418#2317#0#PHP" />
-                <element signature="e#2217#2317#0#PHP" />
-              </folding>
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -88,7 +84,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-15" />
-    <option name="width" value="2368" />
+    <option name="width" value="2288" />
     <option name="height" value="2175" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -179,18 +175,19 @@
       <workItem from="1568742607554" duration="10000" />
       <workItem from="1568742662465" duration="7763000" />
       <workItem from="1568811036756" duration="15949000" />
-      <workItem from="1568843750346" duration="7911000" />
+      <workItem from="1568843750346" duration="7973000" />
+      <workItem from="1568971818025" duration="265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112718000" />
+    <option name="totallyTimeSpent" value="113045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="947" height="870" extended-state="0" />
+    <frame x="-6" y="0" width="915" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15358362" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16410862" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -293,13 +290,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess" />
     <entry file="file://$PROJECT_DIR$/assets/js/flat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="911">
@@ -333,12 +324,7 @@
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
-          <caret line="32" column="71" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-          <folding>
-            <element signature="n#APICall#0;n#!!top" />
-            <element signature="e#1418#2317#0#PHP" />
-            <element signature="e#2217#2317#0#PHP" />
-          </folding>
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
         </state>
       </provider>
     </entry>
