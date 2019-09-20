@@ -30,7 +30,7 @@ function APICall($url){
 
 function FilterImages($content){
 
-    $urlPattern = 'back.arthur-moug.in[a-zA-Z0-9\\\/-]+.(jpg)|(png)';
+    $urlPattern = '(back.arthur-moug.in)[a-zA-Z0-9\\\/-]+.(jpg)|(png)';
     if(preg_match($urlPattern,$content,$return)){
         echo "A match was found.\n";
         print_r($return);
