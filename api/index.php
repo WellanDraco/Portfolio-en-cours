@@ -31,12 +31,13 @@ function APICall($url){
 function FilterImages($content){
 
     $urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/';
-    if(preg_match($urlPattern,$content,$return)){
+    if(preg_match_all($urlPattern,$content,$return)){
         echo "A match was found.\n";
-        print_r($return);
+
     } else {
         echo "A match was not found.\n";
     }
+    print_r($return);
 
 
     echo "\n\n\n";
