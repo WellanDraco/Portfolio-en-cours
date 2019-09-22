@@ -32,7 +32,7 @@ function FilterImages($content){
 
     $urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
     preg_match_all('back\.arthur-moug\.in', $content, $return);
-    var_dump($return);
+    print_r($return);
 
 
     echo "\n\n\n";
