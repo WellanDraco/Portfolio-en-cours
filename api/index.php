@@ -35,10 +35,11 @@ function FilterImages($content){
     if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
         //comparer avec les images existantes
         $filename = "savedImages.txt";
+        $imagesPath = "../assets/images/";
+        $finalPath = "https://arthur-moug.in/assets/images/";
+
         $savedImagesString= file_get_contents($filename);
         $receivedImages = array();
-        $NewImages = array();
-        $toOldImages = array();
 
         if(!$savedImagesString) $savedImagesString = "[]";
         $savedImages = json_decode($savedImagesString);
@@ -53,25 +54,37 @@ function FilterImages($content){
             $newImgName = str_replace('\/',"",$newImgName);
             $receivedImages[] = $newImgName;
 
-            //on cherche des images inconnues
+            //on cherche des images inconnues pour les télécharger
             if(!in_array($newImgName,$savedImages,true)){
-                $NewImages[] = $newImgName;
+                $content = file_get_contents("https://"+$img);
+                if($content){
+
+
+
+                    
+                    $newUrl = $imagesPath + $newImgName;
+                    file_put_contents($newUrl,$content);
+
+
+
+
+
+
+
+                }
+
             }
         }
 
+        // on cherche les images qui ne servent plus à rien pour les supprimer
         foreach ($savedImages as $savedImage) {
             if(!in_array($savedImage,$receivedImages,true)){
-                $toOldImages[] = $savedImage;
+
+
             }
         }
 
-        echo "\n\n\n\n";
         var_dump($receivedImages);
-        echo "\n\n\n\n";
-        var_dump($NewImages);
-        echo "\n\n\n\n";
-        var_dump($toOldImages);
-
         echo "\n\n\n\n";
     }
 
