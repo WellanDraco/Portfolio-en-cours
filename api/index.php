@@ -40,7 +40,7 @@ function FilterImages($content){
            print_r($img);
            echo "\n";
 
-           echo '\n\n';
+           echo "\n\n";
         }
         echo "\n\n\n\n";
     }
