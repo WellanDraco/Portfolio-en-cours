@@ -33,6 +33,7 @@ function FilterImages($content){
     $urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
     //obtenir toutes les images du fichier
     if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
+    print_r($return);
 
         // scan toutes les images
         foreach ($return as $img) {
@@ -101,7 +102,7 @@ function GetContent(){
 }
 
 $jsonExport = GetContent();
-
-//echo $jsonExport;
+echo "\n\n\nRESULT\n\n";
+echo $jsonExport;
 
 
