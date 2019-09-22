@@ -33,7 +33,14 @@ function FilterImages($content){
     $urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
     //obtenir toutes les images du fichier
     if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
-    //print_r($return);
+        //comparer avec les images existantes
+        $filename = "savedImages.txt";
+        $savedImagesString= file_get_contents($filename);
+        if(!$savedImagesString) $savedImagesString = "[]";
+        $savedImages = json_decode($savedImagesString);
+        var_dump($savedImages);
+        echo "\n";
+
 
         // scan toutes les images
         foreach ($return[0] as $img) {
