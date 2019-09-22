@@ -37,12 +37,13 @@ function FilterImages($content){
 
         // scan toutes les images
         foreach ($return[0] as $img) {
-           print_r($img);
-           echo "\n";
-           $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$img);
+            print_r($img);
+            echo "\n";
+            $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$img);
+            $newImgName = str_replace('\/',"",$newImgName);
             echo $newImgName;
 
-           echo "\n\n";
+            echo "\n\n";
         }
         echo "\n\n\n\n";
     }
