@@ -36,9 +36,8 @@ function FilterImages($content){
     print_r($return);
 
         // scan toutes les images
-        foreach ($return as $img) {
-            echo "a\n";
-           // echo $img + "\n";
+        foreach ($return[0] as $img) {
+           echo $img + "\n";
         }
         echo "\n\n\n\n";
     }
