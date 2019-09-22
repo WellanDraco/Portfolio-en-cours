@@ -32,14 +32,15 @@ function FilterImages($content){
 
     $urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
     //obtenir toutes les images du fichier
-    preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return);
+    if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
 
-    // scan toutes les images
-    foreach (  $return as $img ){
-        //echo $img + "\n";
+        // scan toutes les images
+        foreach ($return as $img) {
+            //echo $img + "\n";
+        }
+        echo "\n\n\n\n";
     }
 
-    echo "\n\n\n";
     //var_dump( $content );
     return $content;
 }
