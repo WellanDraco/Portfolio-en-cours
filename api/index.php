@@ -39,8 +39,8 @@ function FilterImages($content){
         foreach ($return[0] as $img) {
            print_r($img);
            echo "\n";
-
-
+           $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$img);
+            echo $newImgName;
 
            echo "\n\n";
         }
