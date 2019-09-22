@@ -39,6 +39,8 @@ function FilterImages($content){
         foreach ($return[0] as $img) {
            print_r($img);
            echo "\n";
+
+           echo '\n\n';
         }
         echo "\n\n\n\n";
     }
