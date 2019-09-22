@@ -1,7 +1,7 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+//header("Content-Type: application/json; charset=UTF-8");
 
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
@@ -40,6 +40,8 @@ function FilterImages($content){
            print_r($img);
            echo "\n";
 
+
+
            echo "\n\n";
         }
         echo "\n\n\n\n";
@@ -70,10 +72,10 @@ function GetContent(){
 
         $travaux = APICall("https://back.arthur-moug.in/wp-json/wp/v2/travaux");
         $pages = APICall("https://back.arthur-moug.in/wp-json/wp/v2/pages");
-        $medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
+        //$medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
         $posts = APICall("https://back.arthur-moug.in/wp-json/wp/v2/posts");
 
-        if ($travaux === false || $pages === false || $medias === false || $posts === false) {
+        if ($travaux === false || $pages === false || $posts === false) {
 
             $content = file_get_contents($filename);
 
@@ -83,7 +85,6 @@ function GetContent(){
             $content = json_encode(array(
                 "travaux" => $travaux,
                 "pages" => $pages,
-                "medias" => $medias,
                 "posts" => $posts,
             ));
 
