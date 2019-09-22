@@ -1,7 +1,7 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-//header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
 
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
