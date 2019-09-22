@@ -36,22 +36,24 @@ function FilterImages($content){
         //comparer avec les images existantes
         $filename = "savedImages.txt";
         $savedImagesString= file_get_contents($filename);
+        $receivedImages = array();
+
         if(!$savedImagesString) $savedImagesString = "[]";
         $savedImages = json_decode($savedImagesString);
         var_dump($savedImages);
-        echo "\n";
-
+        echo "\n\n";
 
         // scan toutes les images
         foreach ($return[0] as $img) {
-            print_r($img);
-            echo "\n";
+            //print_r($img);
+            //echo "\n";
             $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$img);
             $newImgName = str_replace('\/',"",$newImgName);
-            echo $newImgName;
-
-            echo "\n\n";
+            //echo $newImgName;
+            $receivedImages[] = $newImgName;
         }
+        var_dump($receivedImages);
+
         echo "\n\n\n\n";
     }
 
