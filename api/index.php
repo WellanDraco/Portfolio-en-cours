@@ -36,7 +36,7 @@ function FilterImages($content){
 
 
     echo "\n\n\n";
-    echo $content;
+    var_dump( $content );
     return $content;
 }
 
