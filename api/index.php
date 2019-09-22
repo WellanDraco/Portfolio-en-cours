@@ -31,7 +31,7 @@ function APICall($url){
 function FilterImages($content){
 
     $urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
-    preg_match_all('/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g', $content, $return);
+    preg_match_all('/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\./g', $content, $return);
     var_dump($return);
 
 
