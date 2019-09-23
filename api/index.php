@@ -65,11 +65,13 @@ function FilterImages($content){
                     echo $newUrl . "\n";
 
                     $createdImage = fopen($newUrl,'W');
-                    fwrite($createdImage,$content);
-                    fclose($createdImage);
+                    if($createdImage && fwrite($createdImage,$content) && fclose($createdImage))
+                        $finalUrl = $finalPath . $newImgName;
+                    else {
+                        echo "fail \n";
+                        $finalUrl = $oldImgPath;
+                    }
 
-
-                    $finalUrl = $finalPath . $newImgName;
 
 
                 } else {
