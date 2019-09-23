@@ -53,7 +53,7 @@ function FilterImages($content){
             $newImgName = str_replace('\/',"",$newImgName);
             $oldImgPath = str_replace('\\',"",$oldImgPath);
             $receivedImages[] = $newImgName;
-            $newUrl = $imagesFolderPath . $newImgName;
+            $newUrl = $finalPath . $newImgName;
             $finalUrl ="";
 
             //on cherche des images inconnues pour les télécharger
