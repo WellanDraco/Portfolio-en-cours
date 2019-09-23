@@ -65,37 +65,16 @@ function FilterImages($content){
                     echo "\n\n";
                     echo $newUrl . "\n";
 
-                    $createdImage = fopen($newUrl,'W');
 
-                    if($createdImage) {
-                        if(fwrite($createdImage,$content) ) {
-                            if(fclose($createdImage)) {
-                                echo "done\n";
-                                $finalUrl = $finalPath . $newImgName;
-                            }
-                            else {
-                                echo "fail to close \n";
-                                $finalUrl = $oldImgPath;
-                            }
-                        }
-                        else {
-                            echo "fail to write \n";
-                            $finalUrl = $oldImgPath;
-                        }
+                    if(file_put_contents($newUrl,$content)) {
+                        echo "done\n";
+                        $finalUrl = $finalPath . $newImgName;
                     }
                     else {
-                        echo "fail to create\ntest file_put\n";
-
-                        if(file_put_contents($newUrl,$content)) {
-                            echo "done\n";
-                            $finalUrl = $finalPath . $newImgName;
-                        }
-                        else {
-                            echo "fail to fileput \n";
-                            $finalUrl = $oldImgPath;
-                        }
-
+                        echo "fail to fileput \n";
+                        $finalUrl = $oldImgPath;
                     }
+
 
 
 
