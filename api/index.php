@@ -59,11 +59,10 @@ function FilterImages($content){
             //on cherche des images inconnues pour les télécharger
             if(!in_array($newImgName,$savedImages,true)){
                 $content = file_get_contents('https://' . $oldImgPath);
-                if($content){
+                //si l'image existe et que l'upload a bien eu lieu
+                if($content && (file_put_contents($newUrl,$content) == true)){
 
-                    //si on arrive a download
                     echo $newUrl . "\n";
-                    file_put_contents($newUrl,$content);
                     $finalUrl = $finalPath . $newImgName;
 
                 } else {
