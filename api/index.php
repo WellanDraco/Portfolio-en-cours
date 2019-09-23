@@ -35,8 +35,8 @@ function FilterImages($content){
     if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
         //comparer avec les images existantes
         $filename = "savedImages.txt";
-        $imagesFolderPath = "";
-        $finalPath = "https://arthur-moug.in/api/";
+        $imagesFolderPath = "../assets/images/";
+        $finalPath = "https://arthur-moug.in/assets/images/";
         $return[1] = array();
 
         $savedImagesString= file_get_contents($filename);
@@ -84,7 +84,7 @@ function FilterImages($content){
                         }
                     }
                     else {
-                        echo "fail to create\ntest file_put";
+                        echo "fail to create\ntest file_put\n";
 
                         if(file_put_contents($newUrl,$content)) {
                             echo "done\n";
