@@ -59,10 +59,10 @@ function FilterImages($content){
             //on cherche des images inconnues pour les télécharger
             if(!in_array($newImgName,$savedImages,true)){
                 $content = file_get_contents('https://' . $oldImgPath);
-                echo "\n\n";
+
                 //si l'image existe et que l'upload a bien eu lieu
                 if($content){
-
+                    echo "\n\n";
                     echo $newUrl . "\n";
 
                     $createdImage = fopen($newUrl,'W');
@@ -70,7 +70,7 @@ function FilterImages($content){
                     if($createdImage) {
                         if(fwrite($createdImage,$content) ) {
                             if(fclose($createdImage)) {
-
+                                echo "done\n";
                                 $finalUrl = $finalPath . $newImgName;
                             }
                             else {
@@ -84,8 +84,17 @@ function FilterImages($content){
                         }
                     }
                     else {
-                        echo "fail \n";
-                        $finalUrl = $oldImgPath;
+                        echo "fail to create\ntest file_put";
+
+                        if(file_put_contents($newUrl,$content)) {
+                            echo "done\n";
+                            $finalUrl = $finalPath . $newImgName;
+                        }
+                        else {
+                            echo "fail to fileput \n";
+                            $finalUrl = $oldImgPath;
+                        }
+
                     }
 
 
