@@ -68,7 +68,7 @@ function FilterImages($content){
                 } else {
                     //sinon
                     echo "\n\n\n\n\n\n";
-                    echo "image inconnue" . $content;
+                    echo "image inconnue :" . 'https://' .$oldImgPath;
                     echo "\n\n\n\n\n\n";
 
                     $finalUrl = $oldImgPath;
