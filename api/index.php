@@ -65,8 +65,23 @@ function FilterImages($content){
                     echo $newUrl . "\n";
 
                     $createdImage = fopen($newUrl,'W');
-                    if($createdImage && fwrite($createdImage,$content) && fclose($createdImage))
-                        $finalUrl = $finalPath . $newImgName;
+
+                    if($createdImage) {
+                        if(fwrite($createdImage,$content) ) {
+                            if(fclose($createdImage)) {
+
+                                $finalUrl = $finalPath . $newImgName;
+                            }
+                            else {
+                                echo "fail to close \n";
+                                $finalUrl = $oldImgPath;
+                            }
+                        }
+                        else {
+                            echo "fail to write \n";
+                            $finalUrl = $oldImgPath;
+                        }
+                    }
                     else {
                         echo "fail \n";
                         $finalUrl = $oldImgPath;
@@ -94,7 +109,7 @@ function FilterImages($content){
             }
         }
 
-        var_dump($receivedImages);
+        var_dump($return);
         echo "\n\n\n\n";
     }
 
