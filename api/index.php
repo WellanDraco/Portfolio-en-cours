@@ -66,6 +66,7 @@ function FilterImages($content){
 
                     $createdImage = fopen($newUrl,'W');
                     fwrite($createdImage,$content);
+                    fclose($createdImage);
 
 
                     $finalUrl = $finalPath . $newImgName;
