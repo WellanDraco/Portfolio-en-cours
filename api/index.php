@@ -51,6 +51,7 @@ function FilterImages($content){
             //echo "\n";
             $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$oldImgPath);
             $newImgName = str_replace('\/',"",$newImgName);
+            $oldImgPath = str_replace('\\',"",$oldImgPath);
             $receivedImages[] = $newImgName;
             $newUrl = $imagesFolderPath . $newImgName;
             $finalUrl ="";
