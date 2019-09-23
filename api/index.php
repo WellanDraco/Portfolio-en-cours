@@ -60,21 +60,19 @@ function FilterImages($content){
             if(!in_array($newImgName,$savedImages,true)){
                 $content = file_get_contents('https://' . $oldImgPath);
                 //si l'image existe et que l'upload a bien eu lieu
-                if($content && (file_put_contents($newUrl,$content) == true)){
+                if($content){
 
                     echo $newUrl . "\n";
+
+                    $createdImage = fopen($newUrl,'W');
+                    fwrite($createdImage,$content);
+
+
                     $finalUrl = $finalPath . $newImgName;
 
+
                 } else {
-                    //sinon
-                    echo "\n\n\n\n\n\n";
-                    echo "image inconnue ou upload fail :" . 'https://' .$oldImgPath;
-                    echo "\n";
-                    echo $newUrl;
-                    echo "\n\n\n\n\n\n";
-
                     $finalUrl = $oldImgPath;
-
                 }
             }
 
