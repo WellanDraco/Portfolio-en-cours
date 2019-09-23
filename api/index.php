@@ -70,7 +70,7 @@ function FilterImages($content){
                     echo "\n\n\n\n\n\n";
                     echo "image inconnue ou upload fail :" . 'https://' .$oldImgPath;
                     echo "\n";
-                    var_dump($content);
+                    echo $newUrl;
                     echo "\n\n\n\n\n\n";
 
                     $finalUrl = $oldImgPath;
