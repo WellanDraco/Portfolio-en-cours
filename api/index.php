@@ -35,8 +35,8 @@ function FilterImages($content){
     if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
         //comparer avec les images existantes
         $filename = "savedImages.txt";
-        $imagesFolderPath = "/img/";
-        $finalPath = "https://arthur-moug.in/api/img";
+        $imagesFolderPath = "/";
+        $finalPath = "https://arthur-moug.in/api/";
         $return[1] = array();
 
         $savedImagesString= file_get_contents($filename);
