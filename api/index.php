@@ -35,7 +35,7 @@ function FilterImages($content){
     if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
         //comparer avec les images existantes
         $filename = "savedImages.txt";
-        $imagesFolderPath = "/";
+        $imagesFolderPath = "";
         $finalPath = "https://arthur-moug.in/api/";
         $return[1] = array();
 
@@ -59,8 +59,6 @@ function FilterImages($content){
             //on cherche des images inconnues pour les télécharger
             if(!in_array($newImgName,$savedImages,true)){
                 $content = file_get_contents('https://' . $oldImgPath);
-
-                echo get_include_path();
                 echo "\n\n";
                 //si l'image existe et que l'upload a bien eu lieu
                 if($content){
