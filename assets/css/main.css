@@ -76,6 +76,23 @@ section {
     color:#CAD2C5;
 }
 
+#contact article ul {
+    padding : 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#contact article ul li {
+    background-color : white;
+    width : 70px;
+    height : 70px;
+    border-radius : 100px;
+    overflow: hidden;
+}
+
+
 article {
     overflow: hidden;
     margin: 2em auto;
@@ -153,7 +170,6 @@ article button:hover {
 article .content button {
     margin-top : 0.5em;
 }
-
 
 @media screen and (max-width : 500px){
     article .titleContainer {

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5062b6b9-fc11-491c-aeef-87f9477d5de8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/flat.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/flat.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+            <state relative-caret-position="660">
+              <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
               <folding>
                 <element signature="e#0#50#0" />
                 <element signature="e#57#377#0" />
@@ -76,6 +75,7 @@
                 <element signature="e#2196#2288#0" />
                 <element signature="e#2311#2319#0" />
                 <element signature="e#2367#2375#0" />
+                <element signature="e#2432#2477#0" />
               </folding>
             </state>
           </provider>
@@ -251,12 +251,12 @@
       <workItem from="1568971818025" duration="4527000" />
       <workItem from="1569160916972" duration="20255000" />
       <workItem from="1569326409766" duration="1878000" />
-      <workItem from="1569345774973" duration="10457000" />
+      <workItem from="1569345774973" duration="10828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149897000" />
+    <option name="totallyTimeSpent" value="150268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
@@ -406,8 +406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+        <state relative-caret-position="660">
+          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
           <folding>
             <element signature="e#0#50#0" />
             <element signature="e#57#377#0" />
@@ -434,6 +434,7 @@
             <element signature="e#2196#2288#0" />
             <element signature="e#2311#2319#0" />
             <element signature="e#2367#2375#0" />
+            <element signature="e#2432#2477#0" />
           </folding>
         </state>
       </provider>
