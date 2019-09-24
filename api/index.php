@@ -78,9 +78,6 @@ function FilterImages($content){
                     $finalUrl = $oldImgPath;
                 }
 
-
-
-
             } else {
                 $finalUrl = $oldImgPath;
             }
@@ -94,7 +91,7 @@ function FilterImages($content){
     // on cherche les images qui ne servent plus à rien pour les supprimer
     foreach ($savedImages as $savedImage) {
         if (!in_array($savedImage, $receivedImages, true)) {
-            echo "delete ".$savedImage."\n";
+            //echo "delete ".$savedImage."\n";
             $realpath = realpath($imagesFolderPath . $savedImage);
             if (is_writable($realpath)) unlink($realpath);
 
@@ -103,7 +100,7 @@ function FilterImages($content){
 
     var_dump($return);
 
-    echo "\n\n\n";
+    //echo "\n\n\n";
 
     $old = $return[0];
     $new = $return[1];
@@ -111,32 +108,26 @@ function FilterImages($content){
 
     for($i = 0; $i<count($old);$i++){
 
-        echo "\n\n";
+        //echo "\n\n";
 
         $new[$i] = str_replace('/','\/',$new[$i]);
 
-        echo "i:".$i." [0][i]:'".$old[$i]."' -> [1][i]:'".$new[$i]."'\n";
+        //echo "i:".$i." [0][i]:'".$old[$i]."' -> [1][i]:'".$new[$i]."'\n";
 
         $newcontent = str_replace($old[$i],$new[$i],$content);
 
         if($newcontent == $content){
-            echo "pas de modification\n";
+            //echo "pas de modification\n";
         }
         else {
-            echo "done\n";
+            //echo "done\n";
             $content = $newcontent;
         }
     }
 
 
-
-
-    echo "\n\n\n";
-
-
-
-    var_dump( $content );
-    echo "\n\n\n";
+    //var_dump( $content );
+    //echo "\n\n\n";
 
     return $content;
 }
@@ -162,10 +153,10 @@ function GetContent(){
 
         $travaux = APICall("https://back.arthur-moug.in/wp-json/wp/v2/travaux");
         $pages = APICall("https://back.arthur-moug.in/wp-json/wp/v2/pages");
-        //$medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
+        $medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
         $posts = APICall("https://back.arthur-moug.in/wp-json/wp/v2/posts");
 
-        if ($travaux === false || $pages === false || $posts === false) {
+        if ($travaux === false || $medias === false || $pages === false || $posts === false) {
 
             $content = file_get_contents($filename);
 
@@ -175,6 +166,7 @@ function GetContent(){
             $content = json_encode(array(
                 "travaux" => $travaux,
                 "pages" => $pages,
+                "media" => $medias,
                 "posts" => $posts,
             ));
 
@@ -195,7 +187,7 @@ function GetContent(){
 }
 
 $jsonExport = GetContent();
-echo "\n\n\nRESULT\n\n";
+//echo "\n\n\nRESULT\n\n";
 echo $jsonExport;
 
 
