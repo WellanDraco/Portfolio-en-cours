@@ -127,7 +127,8 @@ article .titleContainer img {
 
 article .content .inner {
     max-height: 50vh;
-    overflow: auto;
+    overflow-y: scroll;
+    background-color: #494c63;
 }
 
 article .content .inner > div {
@@ -151,4 +152,17 @@ article button:hover {
 
 article .content button {
     margin-top : 0.5em;
+}
+
+
+@media screen and (max-width : 500px){
+    article .titleContainer {
+        font-size :2em;
+    }
+
+    article div:not(.titleContainer).show {
+        margin : 2em 1em 2em 1em;
+    }
+
+
 }

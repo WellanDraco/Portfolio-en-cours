@@ -41,11 +41,7 @@
         renderOne(contactjson,document.getElementById('contact'),true);
 
         var buttons = document.querySelectorAll("article div button");
-        console.log(buttons);
-
-        var contentInner = document.querySelectorAll("article .content .inner");
-        console.log(contentInner);
-
+        //console.log(buttons);
 
         for(let i = 0;i<buttons.length;i++){
             let el = buttons[i];
