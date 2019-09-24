@@ -45,7 +45,7 @@ function FilterImages($content){
         if(!$savedImagesString) $savedImagesString = "[]";
         $savedImages = json_decode($savedImagesString);
 
-        // scan toutes les images
+        // scan toutes les images et télécharger les nouvelles
         foreach ($return[0] as $oldImgPath) {
             //print_r($img);
             //echo "\n";
@@ -62,16 +62,13 @@ function FilterImages($content){
 
                 //si l'image existe et que l'upload a bien eu lieu
                 if($content){
-                    echo "\n\n";
-                    echo $newUrl . "\n";
-
 
                     if(file_put_contents($newUrl,$content)) {
-                        echo "done\n";
+                        //echo "done\n";
                         $finalUrl = $finalPath . $newImgName;
                     }
                     else {
-                        echo "fail to fileput \n";
+                        //echo "fail to fileput \n";
                         $finalUrl = $oldImgPath;
                     }
 
@@ -87,6 +84,9 @@ function FilterImages($content){
             $return[1][] = $finalUrl;
 
         }
+
+        var_dump($return);
+
 
         // on cherche les images qui ne servent plus à rien pour les supprimer
         foreach ($savedImages as $savedImage) {
