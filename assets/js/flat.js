@@ -40,8 +40,12 @@
         var contactjson = json.pages.find(obj => obj.slug === 'contact');
         renderOne(contactjson,document.getElementById('contact'),true);
 
-        var buttons = document.querySelectorAll(".excerpt button");
+        var buttons = document.querySelectorAll("article div button");
         console.log(buttons);
+
+        var contentInner = document.querySelectorAll("article .content .inner");
+        console.log(contentInner);
+
 
         for(let i = 0;i<buttons.length;i++){
             let el = buttons[i];
@@ -51,10 +55,9 @@
     }
 
     function showmore(event){
-        console.log("click",event);
         let e = event.target;
-        let excerpt = e.parentNode;
-        let content = e.parentNode.nextSibling;
+        let excerpt = e.parentNode.parentNode.childNodes[1];
+        let content = e.parentNode.parentNode.childNodes[2];
         excerpt.classList.toggle('show');
         excerpt.classList.toggle('hide');
         content.classList.toggle('show');
@@ -124,10 +127,13 @@
             ];
 
             //on extrait des informations principales du fichier original
-
+            //console.log("thumbnails: ",thumbnails);
             var originalSplitedName = thumbnails[3].url.split(".");
+            //console.log("originalSplitedName: ",originalSplitedName);
             var originalName = originalSplitedName[0]+"."+originalSplitedName[1]+"."+originalSplitedName[2];
-            var extention = "."+ originalSplitedName[3];
+            //console.log("originalName: ",originalName);
+            var extention = "."+ originalSplitedName[2];
+            //console.log("extention: ",extention);
 
             // on se ballade dans les 3 premières images pour chercher si elles ont des dimensions dans leur nom
 
@@ -135,13 +141,19 @@
 
                 let el = thumbnails[i];
                 //on extrait du nom les contenus connus
-                var dimensions = el.url.replace(originalName,'').replace(extention,'');
+                var shortUrl = el.url.replace(originalName,'').replace(extention,'');
 
-                if(dimensions !== "") {
+                if(shortUrl !== "") {
 
                     //si il y a bien des dimensions, on les nettois et on met la largeur dans la valeur size
-                    dimensions = dimensions.replace('-','');
+                    //console.log(shortUrl);
+                    var splitedUrl = shortUrl.split('-');
+                    var dimensions = splitedUrl[splitedUrl.length -1];
+                    //console.log(dimensions);
                     el.size = dimensions.split('x')[0];
+                    //console.log(el.size );
+
+                    //console.log("test");
 
                 }
 
@@ -153,7 +165,7 @@
             for(let i = 0;i<thumbnails.length -1;i++){
                 let el = thumbnails[i];
                 if(el.size !== 0){
-                    AC += el.url + " " + el.size + "w,"
+                    AC += el.url + " " + el.size + "w, "
                 }
             }
             AC+= "' src='"+thumbnails[3].url+"'></img>";
@@ -196,8 +208,8 @@
 
         if(UseExcerpt){
 
-            AC+="<div class='excerpt show'>" + article.excerpt.rendered + "<button>en savoir Plus</button></div>";
-            AC+="<div class='content hide'>"+ contentHTML + "</div>";
+            AC+="<div class='excerpt show'>" + article.excerpt.rendered + "<button>en savoir plus</button></div>";
+            AC+="<div class='content hide'><div class='inner'>"+ contentHTML + "</div><button>réduire</button></div>";
 
         }
         else {
