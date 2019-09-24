@@ -101,10 +101,12 @@ function FilterImages($content){
         }
     }
 
+    var_dump($return);
+
     echo "\n\n\n";
     for($i = 0; $i<count($return[0]);$i++){
         echo "\n\n";
-        echo $return[0][i]." -> ".$return[1][i]."\n";
+        echo "i:".$i." [0][i]:".$return[0][i]." -> [1][i]:".$return[1][i]."\n";
         $newcontent = str_replace($return[0][i],$return[1][i],$return);
         if($newcontent = $content){
             echo "pas de modification\n";
@@ -114,10 +116,7 @@ function FilterImages($content){
             $content = $newcontent;
         }
     }
-    echo "\n\n\n";
 
-
-    var_dump($return);
 
 
 
