@@ -42,7 +42,7 @@ function FilterImages($content){
     //comparer avec les images existantes
     $filename = "savedImages.txt";
     $imagesFolderPath = "../assets/images/";
-    $finalPath = "https://arthur-moug.in/assets/images/";
+    $finalPath = "arthur-moug.in/assets/images/";
     $return[1] = array();
 
     $savedImagesString= file_get_contents($filename);
