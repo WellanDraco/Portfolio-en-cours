@@ -98,7 +98,7 @@ function FilterImages($content){
         }
     }
 
-    var_dump($return);
+    //var_dump($return);
 
     //echo "\n\n\n";
 
