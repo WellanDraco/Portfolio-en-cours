@@ -104,11 +104,16 @@ function FilterImages($content){
     var_dump($return);
 
     echo "\n\n\n";
-    for($i = 0; $i<count($return[0]);$i++){
+
+    $old = $return[0];
+    $new = $return[1];
+    for($i = 0; $i<count($old);$i++){
         echo "\n\n";
-        echo "i:".$i." [0][i]:".$return[0][i]." -> [1][i]:".$return[1][i]."\n";
-        $newcontent = str_replace($return[0][i],$return[1][i],$return);
-        if($newcontent = $content){
+
+        echo "i:".$i." [0][i]:'".$old[i]."' -> [1][i]:'".$new[i]."'\n";
+        $newcontent = str_replace($old[i],$new[i],$return);
+
+        if($newcontent == $content){
             echo "pas de modification\n";
         }
         else {

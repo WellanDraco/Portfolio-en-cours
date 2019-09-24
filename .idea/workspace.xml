@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="108" column="53" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="53" />
+            <state relative-caret-position="365">
+              <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
               <folding>
                 <element signature="e#345#911#0#PHP" />
                 <element signature="n#GetContent#0;n#!!top" />
@@ -53,6 +53,7 @@
       <find>console.</find>
       <find>FilterImages</find>
       <find>$return</find>
+      <find>$content</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,12 +197,12 @@
       <workItem from="1568811036756" duration="15949000" />
       <workItem from="1568843750346" duration="7973000" />
       <workItem from="1568971818025" duration="4527000" />
-      <workItem from="1569160916972" duration="18339000" />
+      <workItem from="1569160916972" duration="18600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135646000" />
+    <option name="totallyTimeSpent" value="135907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="779" height="870" extended-state="0" />
@@ -346,8 +347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="108" column="53" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="53" />
+        <state relative-caret-position="365">
+          <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
           <folding>
             <element signature="e#345#911#0#PHP" />
             <element signature="n#GetContent#0;n#!!top" />
