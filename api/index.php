@@ -107,11 +107,15 @@ function FilterImages($content){
 
     $old = $return[0];
     $new = $return[1];
+
+
     for($i = 0; $i<count($old);$i++){
+
         echo "\n\n";
 
-        echo "i:".$i." [0][i]:'".$old[i]."' -> [1][i]:'".$new[i]."'\n";
-        $newcontent = str_replace($old[i],$new[i],$content);
+        echo "i:".$i." [0][i]:'".$old[$i]."' -> [1][i]:'".$new[$i]."'\n";
+
+        $newcontent = str_replace($old[$i],$new[$i],$content);
 
         if($newcontent == $content){
             echo "pas de modification\n";
