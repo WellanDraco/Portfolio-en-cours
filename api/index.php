@@ -113,6 +113,8 @@ function FilterImages($content){
 
         echo "\n\n";
 
+        $new[$i] = str_replace('/','\/',$new[$i]);
+
         echo "i:".$i." [0][i]:'".$old[$i]."' -> [1][i]:'".$new[$i]."'\n";
 
         $newcontent = str_replace($old[$i],$new[$i],$content);
