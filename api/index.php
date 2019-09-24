@@ -64,12 +64,12 @@ function FilterImages($content){
 
         //on cherche des images inconnues pour les télécharger
         if(!in_array($newImgName,$savedImages,true)){
-            $content = file_get_contents('https://' . $oldImgPath);
+            $imgContent = file_get_contents('https://' . $oldImgPath);
 
             //si l'image existe et que l'upload a bien eu lieu
-            if($content){
+            if($imgContent){
 
-                if(file_put_contents($newUrl,$content)) {
+                if(file_put_contents($newUrl,$imgContent)) {
                     //echo "done\n";
                     $finalUrl = $finalPath . $newImgName;
                 }
