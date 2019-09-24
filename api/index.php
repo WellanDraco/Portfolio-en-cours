@@ -30,79 +30,104 @@ function APICall($url){
 
 function FilterImages($content){
 
-    //$urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
-    //obtenir toutes les images du fichier
-    if(preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
-        //comparer avec les images existantes
-        $filename = "savedImages.txt";
-        $imagesFolderPath = "../assets/images/";
-        $finalPath = "https://arthur-moug.in/assets/images/";
-        $return[1] = array();
+    if(!preg_match_all('/back\.arthur-moug\.in[^"\'\s]+\.[a-z]+/', $content, $return)) {
 
-        $savedImagesString= file_get_contents($filename);
-        $receivedImages = array();
+        return $content;
 
-        if(!$savedImagesString) $savedImagesString = "[]";
-        $savedImages = json_decode($savedImagesString);
-
-        // scan toutes les images et télécharger les nouvelles
-        foreach ($return[0] as $oldImgPath) {
-            //print_r($img);
-            //echo "\n";
-            $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$oldImgPath);
-            $newImgName = str_replace('\/',"",$newImgName);
-            $oldImgPath = str_replace('\\',"",$oldImgPath);
-            $receivedImages[] = $newImgName;
-            $newUrl = $imagesFolderPath . $newImgName;
-            $finalUrl = $finalPath . $newImgName;
-
-            //on cherche des images inconnues pour les télécharger
-            if(!in_array($newImgName,$savedImages,true)){
-                $content = file_get_contents('https://' . $oldImgPath);
-
-                //si l'image existe et que l'upload a bien eu lieu
-                if($content){
-
-                    if(file_put_contents($newUrl,$content)) {
-                        //echo "done\n";
-                        $finalUrl = $finalPath . $newImgName;
-                    }
-                    else {
-                        //echo "fail to fileput \n";
-                        $finalUrl = $oldImgPath;
-                    }
-
-
-
-
-                } else {
-                    $finalUrl = $oldImgPath;
-                }
-            }
-
-            //on met l'url finale dans un second tableau associé au premier
-            $return[1][] = $finalUrl;
-
-        }
-
-        var_dump($return);
-
-
-        // on cherche les images qui ne servent plus à rien pour les supprimer
-        foreach ($savedImages as $savedImage) {
-            if(!in_array($savedImage,$receivedImages,true)){
-
-                $realpath = realpath($imagesFolderPath . $savedImage);
-                if(is_writable($realpath)) unlink($realpath);
-
-            }
-        }
-
-        var_dump($return);
-        echo "\n\n\n\n";
     }
 
-    //var_dump( $content );
+    //$urlPattern = '/https:\\\/\\\/back.arthur-moug.in\\\/[a-zA-Z0-9\\\/-]+\.((jpg)|(png))/g';
+    //obtenir toutes les images du fichier
+
+    //comparer avec les images existantes
+    $filename = "savedImages.txt";
+    $imagesFolderPath = "../assets/images/";
+    $finalPath = "https://arthur-moug.in/assets/images/";
+    $return[1] = array();
+
+    $savedImagesString= file_get_contents($filename);
+    $receivedImages = array();
+
+    if(!$savedImagesString) $savedImagesString = "[]";
+    $savedImages = json_decode($savedImagesString);
+
+    // scan toutes les images et télécharger les nouvelles
+    foreach ($return[0] as $oldImgPath) {
+        //print_r($img);
+        //echo "\n";
+        $newImgName = str_replace('back.arthur-moug.in\/wp-content\/uploads\/',"",$oldImgPath);
+        $newImgName = str_replace('\/',"",$newImgName);
+        $oldImgPath = str_replace('\\',"",$oldImgPath);
+        $receivedImages[] = $newImgName;
+        $newUrl = $imagesFolderPath . $newImgName;
+        $finalUrl = $finalPath . $newImgName;
+
+        //on cherche des images inconnues pour les télécharger
+        if(!in_array($newImgName,$savedImages,true)){
+            $content = file_get_contents('https://' . $oldImgPath);
+
+            //si l'image existe et que l'upload a bien eu lieu
+            if($content){
+
+                if(file_put_contents($newUrl,$content)) {
+                    //echo "done\n";
+                    $finalUrl = $finalPath . $newImgName;
+                }
+                else {
+                    //echo "fail to fileput \n";
+                    $finalUrl = $oldImgPath;
+                }
+
+
+
+
+            } else {
+                $finalUrl = $oldImgPath;
+            }
+        }
+
+        //on met l'url finale dans un second tableau associé au premier
+        $return[1][] = $finalUrl;
+
+    }
+
+    // on cherche les images qui ne servent plus à rien pour les supprimer
+    foreach ($savedImages as $savedImage) {
+        if (!in_array($savedImage, $receivedImages, true)) {
+            echo "delete ".$savedImage."\n";
+            $realpath = realpath($imagesFolderPath . $savedImage);
+            if (is_writable($realpath)) unlink($realpath);
+
+        }
+    }
+
+    echo "\n\n\n";
+    for($i = 0; $i<count($return[0]);$i++){
+        echo "\n\n";
+        echo $return[0][i]." -> ".$return[1][i]."\n";
+        $newcontent = str_replace($return[0][i],$return[1][i],$return);
+        if($newcontent = $content){
+            echo "pas de modification\n";
+        }
+        else {
+            echo "done\n";
+            $content = $newcontent;
+        }
+    }
+    echo "\n\n\n";
+
+
+    var_dump($return);
+
+
+
+    echo "\n\n\n";
+
+
+
+    var_dump( $content );
+    echo "\n\n\n";
+
     return $content;
 }
 
