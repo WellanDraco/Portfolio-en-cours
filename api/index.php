@@ -199,7 +199,7 @@ function RenderSingleContent($singleContent){
             for($i = 0; $i < count($ts)-1;$i++) {
                 $t = $ts[$i];
                 echo "";
-                var_dump($originalName,"",$t->url);
+                var_dump(str_replace($originalName,'',$t->url));
                 //on cherche les dimensions en supprimant tout le contenu
                 $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t->url));
                 var_dump($shortUrl);
