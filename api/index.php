@@ -163,7 +163,9 @@ function RenderSingleContent($singleContent){
     foreach ($singleContent as $a){
         echo "Render : ";
         var_dump($a);
+        echo "milieu1 Render";
         $render = "<article><div class='titleContainer'><h2>" . $a['title']['rendered'] . "</h2>";
+        echo "milieu2 Render";
 
         var_dump($render);
         echo "fin Render";
