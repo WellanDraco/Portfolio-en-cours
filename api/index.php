@@ -161,15 +161,29 @@ function RenderSingleContent($singleContent){
      * </article>
      */
     foreach ($singleContent as $a){
-        echo "Render : ";
+        $haveUrl =isset($a->x_metadata->{"url"});
         var_dump($a);
-        echo "milieu1 Render";
-        var_dump($a->title);
         $render = "<article><div class='titleContainer'><h2>" . $a->title->rendered . "</h2>";
-        echo "milieu2 Render";
+
+        if($haveUrl){
+            $render .= "<a href=" . $a->x_metadata->url . "'>" . $a->x_metadata->url . "</a>";
+        }
+
+        if($a->featured_media != 0){
+
+
+
+
+
+
+
+
+
+
+        }
+
 
         var_dump($render);
-        echo "fin Render";
         echo "\n\n\n\n";
     }
     echo "\n\n\n\n\n\n\n\n";
