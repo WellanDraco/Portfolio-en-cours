@@ -161,6 +161,7 @@ function RenderSingleContent($singleContent){
      * </article>
      */
     foreach ($singleContent as $a){
+        echo "Render : ";
         var_dump($a);
         $render = "<article><div class='titleContainer'><h2>" . $a['title']['rendered'] . "</h2>";
 
@@ -176,7 +177,6 @@ function AddRenderContent($classicContent){
     $rendered= array(
         "travaux" => RenderSingleContent($classicContent["travaux"]),
         "pages" => RenderSingleContent($classicContent["pages"]),
-        "media" => RenderSingleContent($classicContent["media"]),
         "posts" => RenderSingleContent($classicContent["posts"]),
     );
     $classicContent["rendered"] = $rendered;
