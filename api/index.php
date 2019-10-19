@@ -132,6 +132,13 @@ function FilterImages($content){
     return $content;
 }
 
+function RenderSingleContent($singleContent){
+    var_dump($singleContent);
+    echo "\n\n";
+
+    return $singleContent;
+}
+
 function AddRenderContent($classicContent){
 
     /**
@@ -157,8 +164,13 @@ function AddRenderContent($classicContent){
      *
      * </article>
      */
-    var_dump($classicContent);
-
+    $rendered= array(
+        "travaux" => RenderSingleContent($classicContent["travaux"]),
+        "pages" => RenderSingleContent($classicContent["pages"]),
+        "pages" => RenderSingleContent($classicContent["pages"]),
+        "posts" => RenderSingleContent($classicContent["posts"]),
+    );
+    $classicContent["rendered"] = $rendered;
 
     return $classicContent;
 }
