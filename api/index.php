@@ -160,8 +160,10 @@ function RenderSingleContent($singleContent){
      *
      * </article>
      */
-    foreach ($singleContent as $singleArticle){
-        var_dump($singleArticle);
+    foreach ($singleContent as $a){
+        var_dump($a);
+        $render = "<article><div class='titleContainer'><h2>" . $a['title']['rendered'] . "</h2>";
+
         echo "\n\n\n\n";
     }
     echo "\n\n\n\n\n\n\n\n";
