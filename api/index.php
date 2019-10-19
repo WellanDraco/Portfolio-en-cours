@@ -190,7 +190,7 @@ function RenderSingleContent($singleContent){
                 )
             );
             var_dump($ts);
-            $originalSplitedName = str_split(".", $ts["media_original"]["url"]);
+            $originalSplitedName = explode('.', $ts["media_original"]["url"]);
             $originalName = $originalSplitedName[0] . "." . $originalSplitedName[1] . "." . $originalSplitedName[2];
             $extention = "." . $originalSplitedName[2];
             var_dump($originalSplitedName);
@@ -201,8 +201,8 @@ function RenderSingleContent($singleContent){
                 //on cherche les dimensions en supprimant tout le contenu
                 $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t->url));
                 if($shortUrl != ""){
-                    $splitedUrl = str_split("-",$shortUrl);
-                    $dimension = str_split("x",$splitedUrl[count($splitedUrl)-1]);
+                    $splitedUrl = explode("-",$shortUrl);
+                    $dimension = explode("x",$splitedUrl[count($splitedUrl)-1]);
                     $t->size = $dimension[0];
                 }
             }
