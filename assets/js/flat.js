@@ -167,10 +167,6 @@
             AC+= "' src='"+thumbnails[3].url+"'></img>";
         }
 
-        if(haveUrl){
-            let u = article.x_metadata.url;
-            AC += "<a href='" + u + "'>" + u + "</a>";
-        }
         //fin de la div de titre
         AC += "</div>";
 

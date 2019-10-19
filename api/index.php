@@ -161,6 +161,7 @@ function RenderSingleContent($singleContent){
      * </article>
      */
     foreach ($singleContent as $a){
+        //$a = article
         $haveUrl =isset($a->x_metadata->{"url"});
         var_dump($a);
         $render = "<article><div class='titleContainer'><h2>" . $a->title->rendered . "</h2>";
@@ -168,20 +169,54 @@ function RenderSingleContent($singleContent){
         if($haveUrl){
             $render .= "<a href=" . $a->x_metadata->url . "'>" . $a->x_metadata->url . "</a>";
         }
-
         if($a->featured_media != 0){
+            //$ts = thumbnails
+            $ts = array(
+                "media" =>array(
+                    "url" => $a->x_featured_media,
+                    "size" => 0
+                ),
+                "media_medium" => array(
+                    "url" => $a->x_featured_media_medium,
+                    "size" => 0
+                ),
+                "media_large" => array(
+                    "url" => $a->x_featured_media_large,
+                    "size" => 0
+                ),
+                "media_original" => array(
+                    "url" => $a->x_featured_media_original,
+                    "size" => 0
+                )
+            );
+            $originalSplitedName = str_split(".", $ts["media_original"]["url"]);
+            $originalName = $originalSplitedName[0] . "." . $originalSplitedName[1] . "." . $originalSplitedName[2];
+            $extention = "." . $originalSplitedName[2];
 
+            for($i = 0; $i < count($ts)-1;$i++) {
+                $t = $ts[$i];
+                //on cherche les dimensions en supprimant tout le contenu
+                $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t->url));
+                if($shortUrl != ""){
+                    $splitedUrl = str_split("-",$shortUrl);
+                    $dimension = str_split("x",$splitedUrl[count($splitedUrl)-1]);
+                    $t->size = $dimension[0];
+                }
+            }
 
-
-
-
-
-
-
-
-
+            $render .= "<img alt='thumbnail de ". $a->title->rendered . "' srcset='";
+            for($i = 0; $i < count($ts)-1;$i++) {
+                $t = $ts[$i];
+                if($t->size != 0){
+                    $render .= $t->url . " " . $t->size . "w, ";
+                }
+            }
+            $render .= "' src='" . $ts[count($ts)-1]->url . "'></img>";
         }
 
+        $render .= "</div>";
+
+        //$htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
         var_dump($render);
         echo "\n\n\n\n";
