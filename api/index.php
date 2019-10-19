@@ -164,8 +164,8 @@ function RenderSingleContent($singleContent){
         echo "Render : ";
         var_dump($a);
         echo "milieu1 Render";
-        var_dump($a["title"]);
-        $render = "<article><div class='titleContainer'><h2>" . $a["title"]["rendered"] . "</h2>";
+        var_dump($a->title);
+        $render = "<article><div class='titleContainer'><h2>" . $a->title->rendered . "</h2>";
         echo "milieu2 Render";
 
         var_dump($render);
