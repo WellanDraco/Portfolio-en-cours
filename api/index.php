@@ -133,13 +133,9 @@ function FilterImages($content){
 }
 
 function RenderSingleContent($singleContent){
-    var_dump($singleContent);
-    echo "\n\n";
 
-    return $singleContent;
-}
 
-function AddRenderContent($classicContent){
+    $retour = array();
 
     /**
      * <article>
@@ -164,6 +160,16 @@ function AddRenderContent($classicContent){
      *
      * </article>
      */
+    foreach ($singleContent as $singleArticle){
+        var_dump($singleArticle);
+        echo "\n\n\n\n";
+    }
+    echo "\n\n\n\n\n\n\n\n";
+
+    return $retour;
+}
+
+function AddRenderContent($classicContent){
     $rendered= array(
         "travaux" => RenderSingleContent($classicContent["travaux"]),
         "pages" => RenderSingleContent($classicContent["pages"]),
@@ -171,7 +177,6 @@ function AddRenderContent($classicContent){
         "posts" => RenderSingleContent($classicContent["posts"]),
     );
     $classicContent["rendered"] = $rendered;
-
     return $classicContent;
 }
 
