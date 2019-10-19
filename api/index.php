@@ -193,7 +193,9 @@ function RenderSingleContent($singleContent){
             $originalSplitedName = str_split(".", $ts["media_original"]["url"]);
             $originalName = $originalSplitedName[0] . "." . $originalSplitedName[1] . "." . $originalSplitedName[2];
             $extention = "." . $originalSplitedName[2];
-
+            var_dump($originalSplitedName);
+            var_dump($originalName);
+            var_dump($extention);
             for($i = 0; $i < count($ts)-1;$i++) {
                 $t = $ts[$i];
                 //on cherche les dimensions en supprimant tout le contenu
