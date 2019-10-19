@@ -200,6 +200,7 @@ function RenderSingleContent($singleContent){
                 $t = $ts[$i];
                 //on cherche les dimensions en supprimant tout le contenu
                 $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t->url));
+                var_dump($shortUrl);
                 if($shortUrl != ""){
                     $splitedUrl = explode("-",$shortUrl);
                     $dimension = explode("x",$splitedUrl[count($splitedUrl)-1]);
