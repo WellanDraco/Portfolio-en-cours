@@ -33,7 +33,7 @@
         //render "projets"
         var projetsjson = json.travaux;
         for(let i = 0;i < projetsjson.length ;i++){
-            renderOne(projetsjson[i],document.getElementById('projects'),false);
+            renderOne(projetsjson[i],document.querySelector("#projects .articles"),false);
         }
 
         //render "contact"

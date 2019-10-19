@@ -132,6 +132,37 @@ function FilterImages($content){
     return $content;
 }
 
+function AddRenderContent($classicContent){
+
+    /**
+     * <article>
+     *     <div class='titleContainer'>
+     *         <h1>titre</h1>
+     *         if(haveUrl) <a href='url'>url</a>
+     *         if(haveThumbnail) <img  srcset  src>
+     *     </div>
+     *     if(UseExcerpt){
+     *          <div class='excerpt show'>
+     *              <p>excerpt</p>
+     *              <button>more</button>
+     *          <div>
+     *          <div class='content hide'>
+     *              content
+     *          </div>
+     *     } else {
+     *          <div class='content show'>
+     *              content
+     *          </div>
+     *     }
+     *
+     * </article>
+     */
+    var_dump($classicContent);
+
+
+    return $classicContent;
+}
+
 function GetContent(){
     $filename = "backup.txt";
 
@@ -156,24 +187,29 @@ function GetContent(){
         $medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
         $posts = APICall("https://back.arthur-moug.in/wp-json/wp/v2/posts");
 
-        if ($travaux === false || $medias === false || $pages === false || $posts === false) {
+        if ($travaux === null || $medias === null || $pages === null || $posts === null) {
 
             $content = file_get_contents($filename);
 
         }
         else {
 
-            $content = json_encode(array(
+            $classicContent =array(
                 "travaux" => $travaux,
                 "pages" => $pages,
                 "media" => $medias,
                 "posts" => $posts,
-            ));
+            );
+
+            $classicContent = AddRenderContent($classicContent);
+
+            $content = json_encode($classicContent);
 
             $content = FilterImages($content);
 
+            /**
             file_put_contents($filename, $content);
-
+            /**/
         }
 
     }
