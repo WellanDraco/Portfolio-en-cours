@@ -176,7 +176,7 @@ function AddRenderContent($classicContent){
     $rendered= array(
         "travaux" => RenderSingleContent($classicContent["travaux"]),
         "pages" => RenderSingleContent($classicContent["pages"]),
-        "pages" => RenderSingleContent($classicContent["pages"]),
+        "media" => RenderSingleContent($classicContent["media"]),
         "posts" => RenderSingleContent($classicContent["posts"]),
     );
     $classicContent["rendered"] = $rendered;
