@@ -166,6 +166,7 @@ function RenderSingleContent($singleContent){
         $render = "<article><div class='titleContainer'><h2>" . $a['title']['rendered'] . "</h2>";
 
         var_dump($render);
+        echo "fin Render";
         echo "\n\n\n\n";
     }
     echo "\n\n\n\n\n\n\n\n";
