@@ -189,6 +189,7 @@ function RenderSingleContent($singleContent){
                     "size" => 0
                 )
             );
+            var_dump($ts);
             $originalSplitedName = str_split(".", $ts["media_original"]["url"]);
             $originalName = $originalSplitedName[0] . "." . $originalSplitedName[1] . "." . $originalSplitedName[2];
             $extention = "." . $originalSplitedName[2];
