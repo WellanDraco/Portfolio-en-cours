@@ -230,7 +230,7 @@ function RenderSingleContent($singleContent){
             $contacts = $a->x_metadata;
             foreach( $contacts as $ckey => $cvalue){
                 //si la clé ne contient pas d'underscore
-                if(!preg_match('_',$ckey)){
+                if(!preg_match("_*.",$ckey)){
                     if($ckey == "email") $cvalue = "mailto:".$cvalue;
                     if($ckey == "téléphone") $cvalue = "tel:".$cvalue;
 
