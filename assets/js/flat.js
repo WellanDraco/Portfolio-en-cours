@@ -28,7 +28,7 @@
 
         //render "a propos"
         var aproposJson = json.pages.find(obj => obj.slug === 'presentation');
-        var renderedApropos = json.rendered.pages[json.rendered.pages.indexOf(aproposJson)];
+        var renderedApropos = json.rendered.pages[json.pages.indexOf(aproposJson)];
         console.log(json.rendered.pages.indexOf(aproposJson));
         console.log(renderedApropos);
 
@@ -42,7 +42,7 @@
 
         //render "contact"
         var contactjson = json.pages.find(obj => obj.slug === 'contact');
-        var renderedContact = json.rendered.pages[json.rendered.pages.indexOf(contactjson)];
+        var renderedContact = json.rendered.pages[json.pages.indexOf(contactjson)];
         insertOne(renderedContact,document.getElementById('contact'),true);
 
         var buttons = document.querySelectorAll("article div button");
