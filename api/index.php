@@ -189,12 +189,12 @@ function RenderSingleContent($singleContent){
                     "size" => 0
                 )
             );
-            var_dump($ts);
+            //var_dump($ts);
             $originalSplitedName = explode('.', $ts["media_original"]["url"]);
             $originalName = $originalSplitedName[0] . "." . $originalSplitedName[1] . "." . $originalSplitedName[2];
             $extention = "." . $originalSplitedName[count($originalSplitedName)-1];
-            var_dump($originalName);
-            var_dump($extention);
+            //var_dump($originalName);
+            //var_dump($extention);
             for($i = 0; $i < count($ts)-1;$i++) {
                 $t = $ts[array_keys($ts)[$i]];
 
@@ -212,7 +212,7 @@ function RenderSingleContent($singleContent){
             for($i = 0; $i < count($ts)-1;$i++) {
                 echo "\n\n";
                 $t = $ts[array_keys($ts)[$i]];
-                var_dump($t);
+                //var_dump($t);
                 if($t["size"] != 0){
                     $render .= $t["url"] . " " . $t["size"] . "w, ";
                 }
