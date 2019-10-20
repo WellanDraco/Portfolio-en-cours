@@ -207,6 +207,7 @@ function RenderSingleContent($singleContent){
                     $splitedUrl = explode("-",$shortUrl);
                     $dimension = explode("x",$splitedUrl[count($splitedUrl)-1]);
                     $t["size"] = $dimension[0];
+                    var_dump($t["size"]);
                 }
             }
 
