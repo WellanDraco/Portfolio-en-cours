@@ -193,13 +193,12 @@ function RenderSingleContent($singleContent){
             $originalSplitedName = explode('.', $ts["media_original"]["url"]);
             $originalName = $originalSplitedName[0] . "." . $originalSplitedName[1] . "." . $originalSplitedName[2];
             $extention = "." . $originalSplitedName[count($originalSplitedName)-1];
-            var_dump($originalSplitedName);
             var_dump($originalName);
             var_dump($extention);
             for($i = 0; $i < count($ts)-1;$i++) {
-                $t = $ts[$i];
+                $t = $ts[array_keys($ts)[$i]];
                 echo "\n";
-                var_dump($t['url']);
+                var_dump($t);
                 var_dump(str_replace($originalName,'',$t->url));
                 //on cherche les dimensions en supprimant tout le contenu
                 $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t->url));
@@ -213,7 +212,7 @@ function RenderSingleContent($singleContent){
 
             $render .= "<img alt='thumbnail de ". $a->title->rendered . "' srcset='";
             for($i = 0; $i < count($ts)-1;$i++) {
-                $t = $ts[$i];
+                $t = $ts[array_keys($ts)[$i]];
                 if($t->size != 0){
                     $render .= $t->url . " " . $t->size . "w, ";
                 }
