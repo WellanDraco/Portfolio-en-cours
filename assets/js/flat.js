@@ -33,7 +33,7 @@
         insertOne(renderedApropos,document.getElementById('about'),true);
 
         //render "projets"
-        //var projetsjson = json.travaux;
+        var projetsjson = json.travaux;
         for(let i = 0;i < projetsjson.length ;i++){
             //renderOne(projetsjson[i],document.querySelector("#projects .articles"),false);
             insertOne(json.rendered.travaux[i],document.querySelector("#projects .articles"),false);
