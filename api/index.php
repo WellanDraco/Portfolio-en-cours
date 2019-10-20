@@ -224,6 +224,7 @@ function RenderSingleContent($singleContent){
 
         $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
+        var_dump($a->slug);
         if($a->slug == "contact"){
             echo "YoloSwag123";
             $htmlContent .= "<ul>";
