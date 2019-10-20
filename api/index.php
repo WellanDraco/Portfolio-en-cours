@@ -205,6 +205,7 @@ function RenderSingleContent($singleContent){
                     $dimension = explode("x",$splitedUrl[count($splitedUrl)-1]);
                     $t["size"] = $dimension[0];
                 }
+                $ts[array_keys($ts)[$i]] = $t;
             }
 
             $render .= "<img alt='thumbnail de ". $a->title->rendered . "' srcset='";
