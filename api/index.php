@@ -223,10 +223,9 @@ function RenderSingleContent($singleContent){
         $render .= "</div>";
 
         $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
-
+        $useExcerpt = (isset($a->excerpt->rendered) && ($htmlContent != trim($a->excerpt->rendered)));
 
         if($a->slug == "contact"){
-            echo "YoloSwag123";
             $htmlContent .= "<ul>";
             $contacts = $a->x_metadata;
             foreach( $contacts as $ckey => $cvalue){
@@ -240,8 +239,6 @@ function RenderSingleContent($singleContent){
             }
             $htmlContent .= "</ul>";
         }
-
-        $useExcerpt = (isset($a->excerpt->rendered) && ($htmlContent != trim($a->excerpt->rendered)));
 
         if($useExcerpt){
 
