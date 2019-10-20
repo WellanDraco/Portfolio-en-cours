@@ -163,7 +163,7 @@ function RenderSingleContent($singleContent){
     foreach ($singleContent as $a){
         //$a = article
         $haveUrl =isset($a->x_metadata->{"url"});
-        var_dump($a);
+        //var_dump($a);
         $render = "<article><div class='titleContainer'><h2>" . $a->title->rendered . "</h2>";
 
         if($haveUrl){
@@ -249,11 +249,10 @@ function RenderSingleContent($singleContent){
             $render .= "<div class='content show'>" . $htmlContent . "</div>";
         }
 
-        echo "\n\n";
-        var_dump($render);
-        echo "\n\n\n\n";
+        $render .= "</article></div>";
+
+        $retour[] = $render;
     }
-    echo "\n\n\n\n\n\n\n\n";
 
     return $retour;
 }
@@ -312,7 +311,7 @@ function GetContent(){
 
             $content = FilterImages($content);
 
-            /**
+            /**/
             file_put_contents($filename, $content);
             /**/
         }
