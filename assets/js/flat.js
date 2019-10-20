@@ -24,21 +24,26 @@
 
     //render content
     function renderAll(json){
-        //console.log(json);
+        console.log(json);
 
         //render "a propos"
         var aproposJson = json.pages.find(obj => obj.slug === 'presentation');
-        renderOne(aproposJson,document.getElementById('about'),true);
+        var renderedApropos = json.rendered.pages[json.rendered.pages.indexOf(aproposJson)];
+        //renderOne(aproposJson,document.getElementById('about'),true);
+        insertOne(renderedApropos,document.getElementById('about'),true);
 
         //render "projets"
-        var projetsjson = json.travaux;
+        //var projetsjson = json.travaux;
         for(let i = 0;i < projetsjson.length ;i++){
-            renderOne(projetsjson[i],document.querySelector("#projects .articles"),false);
+            //renderOne(projetsjson[i],document.querySelector("#projects .articles"),false);
+            insertOne(json.rendered.travaux[i],document.querySelector("#projects .articles"),false);
         }
 
         //render "contact"
         var contactjson = json.pages.find(obj => obj.slug === 'contact');
-        renderOne(contactjson,document.getElementById('contact'),true);
+        var renderedContact = json.rendered.pages[json.rendered.pages.indexOf(contactjson)];
+        //renderOne(contactjson,document.getElementById('contact'),true);
+        insertOne(renderedContact,document.getElementById('contact'),true);
 
         var buttons = document.querySelectorAll("article div button");
         //console.log(buttons);
@@ -225,7 +230,12 @@
         DadTarget.appendChild(realAC);
     }
     
-
+    function insertOne(rendered,DadTarget,removeOldContent){
+        if(removeOldContent){
+            DadTarget.innerHTML = "";
+        }
+        DadTarget.innerHTML += rendered;
+    }
 
 
 })();
