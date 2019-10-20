@@ -217,7 +217,7 @@ function RenderSingleContent($singleContent){
                     $render .= $t["url"] . " " . $t["size"] . "w, ";
                 }
             }
-            $render .= "' src='" . $ts[count($ts)-1]["url"] . "'></img>";
+            $render .= "' src='" . $ts["media_original"]["url"] . "'></img>";
         }
 
         $render .= "</div>";
