@@ -224,7 +224,21 @@ function RenderSingleContent($singleContent){
 
         $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
+        if($a->slug == "contact"){
+            echo "YoloSwag123";
+            $htmlContent .= "<ul>";
+            $contacts = $a->x_metadata;
+            foreach( $contacts as $ckey => $cvalue){
+                //si la clé ne contient pas d'underscore
+                if(!preg_match('_',$ckey)){
+                    if($ckey == "email") $cvalue = "mailto:".$cvalue;
+                    if($ckey == "téléphone") $cvalue = "tel:".$cvalue;
 
+                    $htmlContent.= "<li class='".$ckey."'><a href='".$cvalue."'>".$cvalue."</a></li>";
+                }
+            }
+            $htmlContent .= "</ul>";
+        }
 
         echo "\n\n";
         var_dump($render);
