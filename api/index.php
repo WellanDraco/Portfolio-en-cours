@@ -199,25 +199,25 @@ function RenderSingleContent($singleContent){
                 $t = $ts[array_keys($ts)[$i]];
                 echo "\n";
                 var_dump($t["url"]);
-                var_dump(str_replace($originalName,'',$t->url));
+                var_dump(str_replace($originalName,'',$t["url"]));
                 //on cherche les dimensions en supprimant tout le contenu
-                $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t->url));
+                $shortUrl = str_replace($extention,"",str_replace($originalName,"",$t["url"]));
                 var_dump($shortUrl);
                 if($shortUrl != ""){
                     $splitedUrl = explode("-",$shortUrl);
                     $dimension = explode("x",$splitedUrl[count($splitedUrl)-1]);
-                    $t->size = $dimension[0];
+                    $t["size"] = $dimension[0];
                 }
             }
 
             $render .= "<img alt='thumbnail de ". $a->title->rendered . "' srcset='";
             for($i = 0; $i < count($ts)-1;$i++) {
                 $t = $ts[array_keys($ts)[$i]];
-                if($t->size != 0){
-                    $render .= $t->url . " " . $t->size . "w, ";
+                if($t["size"] != 0){
+                    $render .= $t["url"] . " " . $t["size"] . "w, ";
                 }
             }
-            $render .= "' src='" . $ts[count($ts)-1]->url . "'></img>";
+            $render .= "' src='" . $ts[count($ts)-1]["url"] . "'></img>";
         }
 
         $render .= "</div>";
