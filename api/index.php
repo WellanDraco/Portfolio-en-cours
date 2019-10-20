@@ -240,6 +240,17 @@ function RenderSingleContent($singleContent){
             $htmlContent .= "</ul>";
         }
 
+        $useExcerpt = (isset($a->excerpt->rendered) && (trim($a->content->rendered) != trim($a->excerpt->rendered)));
+
+        if($useExcerpt){
+
+            $render .= "<div class='excerpt show'>" . trim($a->excerpt->rendered) . "<button>En savoir plus</button></div>";
+            $render .= "<div class='content hide'><div class='inner'>" . trim($a->content->rendered) . "</div><button>Réduire</button></div>";
+        }
+        else {
+            $render .= "<div class='content show'>" . trim($a->content->rendered) . "</div>";
+        }
+
         echo "\n\n";
         var_dump($render);
         echo "\n\n\n\n";
