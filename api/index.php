@@ -224,7 +224,7 @@ function RenderSingleContent($singleContent){
 
         $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
-        var_dump($a->slug);
+
         if($a->slug == "contact"){
             echo "YoloSwag123";
             $htmlContent .= "<ul>";
@@ -241,15 +241,15 @@ function RenderSingleContent($singleContent){
             $htmlContent .= "</ul>";
         }
 
-        $useExcerpt = (isset($a->excerpt->rendered) && (trim($a->content->rendered) != trim($a->excerpt->rendered)));
+        $useExcerpt = (isset($a->excerpt->rendered) && ($htmlContent != trim($a->excerpt->rendered)));
 
         if($useExcerpt){
 
             $render .= "<div class='excerpt show'>" . trim($a->excerpt->rendered) . "<button>En savoir plus</button></div>";
-            $render .= "<div class='content hide'><div class='inner'>" . trim($a->content->rendered) . "</div><button>Réduire</button></div>";
+            $render .= "<div class='content hide'><div class='inner'>" . $htmlContent . "</div><button>Réduire</button></div>";
         }
         else {
-            $render .= "<div class='content show'>" . trim($a->content->rendered) . "</div>";
+            $render .= "<div class='content show'>" . $htmlContent . "</div>";
         }
 
         echo "\n\n";
