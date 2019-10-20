@@ -133,7 +133,7 @@ function FilterImages($content){
 }
 
 function RenderSingleContent($singleContent){
-    var_dump($singleContent);
+    //var_dump($singleContent);
 
     $retour = array();
 
