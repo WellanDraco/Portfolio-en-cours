@@ -163,7 +163,7 @@ function RenderSingleContent($singleContent){
     foreach ($singleContent as $a){
         //$a = article
         $haveUrl =isset($a->x_metadata->{"url"});
-       // var_dump($a);
+        var_dump($a);
         $render = "<article><div class='titleContainer'><h2>" . $a->title->rendered . "</h2>";
 
         if($haveUrl){
@@ -224,7 +224,7 @@ function RenderSingleContent($singleContent){
 
         $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
-       
+
 
         echo "\n\n";
         var_dump($render);
