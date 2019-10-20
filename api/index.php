@@ -133,7 +133,7 @@ function FilterImages($content){
 }
 
 function RenderSingleContent($singleContent){
-
+    var_dump($singleContent);
 
     $retour = array();
 
@@ -210,7 +210,7 @@ function RenderSingleContent($singleContent){
 
             $render .= "<img alt='thumbnail de ". $a->title->rendered . "' srcset='";
             for($i = 0; $i < count($ts)-1;$i++) {
-                echo "\n\n";
+
                 $t = $ts[array_keys($ts)[$i]];
                 //var_dump($t);
                 if($t["size"] != 0){
@@ -222,8 +222,11 @@ function RenderSingleContent($singleContent){
 
         $render .= "</div>";
 
-        //$htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
+        $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
+        if($a->)
+
+        echo "\n\n";
         var_dump($render);
         echo "\n\n\n\n";
     }
