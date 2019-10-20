@@ -224,7 +224,7 @@ function RenderSingleContent($singleContent){
 
         $htmlContent = str_replace('\n',"<br>",trim($a->content->rendered));
 
-        if($a->)
+       
 
         echo "\n\n";
         var_dump($render);
