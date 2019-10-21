@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{aframe, aframe-environment-component, aframe-extras, aframe-layout-component, super-hands, webxr-polyfill}" />
+    <file url="PROJECT" libraries="{aframe, aframe-environment-component, aframe-html-shader, aframe-layout-component, aframe-look-at-component, super-hands, webxr-polyfill}" />
   </component>
 </project>

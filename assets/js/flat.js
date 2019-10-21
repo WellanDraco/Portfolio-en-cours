@@ -11,6 +11,7 @@
                 var rep = JSON.parse( request.responseText );
                 //console.log(rep);
                 renderAll(rep);
+                tooglePannelInserter();
             } else {
                 console.error(request.statusText);
                 return null;
@@ -72,5 +73,8 @@
         DadTarget.innerHTML += rendered;
     }
 
+    function tooglePannelInserter(){
+        document.querySelector("#layout").setAttribute("pannelinserter",true);
+    }
 
 })();

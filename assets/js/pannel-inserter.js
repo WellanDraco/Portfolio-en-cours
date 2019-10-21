@@ -1,10 +1,13 @@
 AFRAME.registerComponent('pannelinserter',{
-    schema:{
-       target:{
-           type:'string'
-       }
-    },
+    schema:{type:'boolean',default:false},
     update : function(){
-        console.log(this);
+        var ready = this.data;
+        if(ready){
+            console.log(this);
+            console.log("ready");
+            
+
+
+        }
     }
 });
