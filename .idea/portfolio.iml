@@ -16,5 +16,11 @@
     <orderEntry type="library" name="aframe-environment-component" level="application" />
     <orderEntry type="library" name="aframe-extras" level="application" />
     <orderEntry type="library" name="aframe-layout-component" level="application" />
+    <orderEntry type="library" name="webxr-polyfill" level="application" />
+    <orderEntry type="library" name="aframe" level="application" />
+    <orderEntry type="library" name="aframe-environment-component" level="application" />
+    <orderEntry type="library" name="aframe-extras" level="application" />
+    <orderEntry type="library" name="super-hands" level="application" />
+    <orderEntry type="library" name="aframe-layout-component" level="application" />
   </component>
 </module>

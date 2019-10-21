@@ -24,13 +24,13 @@
 
     //render content
     function renderAll(json){
-        console.log(json);
+        //console.log(json);
 
         //render "a propos"
         var aproposJson = json.pages.find(obj => obj.slug === 'presentation');
         var renderedApropos = json.rendered.pages[json.pages.indexOf(aproposJson)];
-        console.log(json.rendered.pages.indexOf(aproposJson));
-        console.log(renderedApropos);
+        //console.log(json.rendered.pages.indexOf(aproposJson));
+        //console.log(renderedApropos);
 
         insertOne(renderedApropos,document.getElementById('about'),true);
 
