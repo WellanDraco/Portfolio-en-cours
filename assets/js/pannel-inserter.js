@@ -5,7 +5,7 @@ AFRAME.registerComponent('pannelinserter',{
         if(ready){
             console.log(this);
             console.log("ready");
-            
+
 
 
         }
