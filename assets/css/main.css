@@ -155,6 +155,7 @@ article {
     background-color: #2b2d3c;
     border-radius: 2em;
     box-sizing: border-box;
+    border: #45d3f4 solid 1px;
 }
 
 .articles article {
@@ -166,6 +167,7 @@ article > div {
 }
 
 article .titleContainer {
+    border-bottom: #45d3f4 solid 1px;
     position: relative;
     display: flex;
     align-items: center;
