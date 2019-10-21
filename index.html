@@ -40,13 +40,13 @@ c
 <!--                    </a-custom-caroussel>-->
                     <a-entity id="layout" layout="type:circle;radius:3;angle:45;plane:xz" position="0 1 0" rotation="0 135 0">
                         <a-entity id="AboutVR">
-                            <a-entity animation="property: rotation; to: -360 360 0; loop: true; dur: 100000; easing:linear" mixin="FloatingCube"></a-entity>
+                            <a-entity animation="property: rotation; to: -360 360 0; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
                         </a-entity>
                         <a-entity id="ProjectsVR">
-                            <a-entity animation="property: rotation; to: 360 -360 360; loop: true; dur: 100000; easing:linear" mixin="FloatingCube"></a-entity>
+                            <a-entity animation="property: rotation; to: 360 -360 360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
                         </a-entity>
                         <a-entity id="ContactVR">
-                            <a-entity animation="property: rotation; to: 0 360 -360; loop: true; dur: 100000; easing:linear" mixin="FloatingCube"></a-entity>
+                            <a-entity animation="property: rotation; to: 0 360 -360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
                         </a-entity>
                     </a-entity>
 
@@ -56,7 +56,9 @@ c
                                             ground:hills;
                                             groundYScale:20;
                                             playArea:0.92;
-                                            seed:2"
+                                            seed:2;
+                                            groundColor:#454545;
+                                            groundColor2:#505050"
                     ></a-entity>
                 </a-scene>
             </section>
