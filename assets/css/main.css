@@ -202,9 +202,34 @@ article .titleContainer img {
 article .content .inner {
     max-height: 50vh;
     overflow-y: scroll;
-    overflow-scrolling: auto;
+    -webkit-overflow-scrolling: touch;
     background-color: #494c63;
 }
+
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #F5F5F5;
+    -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0,0,0,0.61);
+    -webkit-border-radius: 100px;
+}
+
 
 article .content .inner > div {
     margin: 2em auto;
