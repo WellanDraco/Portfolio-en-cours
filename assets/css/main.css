@@ -202,6 +202,7 @@ article .titleContainer img {
 article .content .inner {
     max-height: 50vh;
     overflow-y: scroll;
+    overflow-scrolling: auto;
     background-color: #494c63;
 }
 
