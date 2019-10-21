@@ -46,8 +46,6 @@ section {
     max-width:100vw;
 }
 
-
-
 section .intro {
     padding:0.1em 2em;
     background-color: black;
@@ -102,7 +100,7 @@ section .intro {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #projects .articles article{
@@ -157,6 +155,10 @@ article {
     background-color: #2b2d3c;
     border-radius: 2em;
     box-sizing: border-box;
+}
+
+.articles article {
+    margin:2em 1em;
 }
 
 article > div {
@@ -226,3 +228,17 @@ article .content button {
     margin-top : 0.5em;
 }
 
+@media screen and (max-width : 900px) {
+    body{
+        font-size: 1em;
+    }
+
+    #projects .articles article, #about article, #contact article{
+        max-width: 400px;
+    }
+
+    #contact article ul li {
+        width: 60px;
+        height: 60px;
+    }
+}

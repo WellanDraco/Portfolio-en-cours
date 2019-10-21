@@ -1,4 +1,4 @@
-AFRAME.registerComponent('pannelinserter',{
+AFRAME.registerComponent('rotatingblock',{
     schema:{
        target:{
            type:'string'
