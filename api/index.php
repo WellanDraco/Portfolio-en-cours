@@ -271,7 +271,9 @@ function AddRenderContent($classicContent){
 
 function RenderPage($content){
     $filename = "../index.html";
-    var_dump($content);
+    var_dump($content["pages"]);
+
+
 };
 
 function GetContent(){
@@ -335,8 +337,8 @@ function GetContent(){
 }
 
 $jsonExport = GetContent();
-echo "\n\n\nRESULT\n\n";
-/**/
+//echo "<br><br><br><br><br>RESULT<br><br><br><br><br>";
+/**
 echo $jsonExport;
 /**/
 
