@@ -137,7 +137,6 @@ function FilterImages($content){
 
 function RenderSingleContent($singleContent){
 
-
     $retour = array();
 
     /**
@@ -261,7 +260,6 @@ function RenderSingleContent($singleContent){
 }
 
 function AddRenderContent($classicContent){
-    var_dump($classicContent);
     $rendered= array(
         "travaux" => RenderSingleContent($classicContent["travaux"]),
         "pages" => RenderSingleContent($classicContent["pages"]),
@@ -337,7 +335,8 @@ function GetContent(){
 }
 
 $jsonExport = GetContent();
-//echo "\n\n\nRESULT\n\n";
+echo "\n\n\nRESULT\n\n";
+/**/
 echo $jsonExport;
-
+/**/
 
