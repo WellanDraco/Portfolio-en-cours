@@ -56,6 +56,13 @@
         }
     }
 
+    function insertOne(rendered,DadTarget,removeOldContent){
+        if(removeOldContent){
+            DadTarget.innerHTML = "";
+        }
+        DadTarget.innerHTML += rendered;
+    }
+
     function showmore(event){
         let e = event.target;
         let excerpt = e.parentNode.parentNode.childNodes[1];
@@ -66,12 +73,7 @@
         content.classList.toggle('hide');
     };
     
-    function insertOne(rendered,DadTarget,removeOldContent){
-        if(removeOldContent){
-            DadTarget.innerHTML = "";
-        }
-        DadTarget.innerHTML += rendered;
-    }
+
 
     function tooglePannelInserter(){
         document.querySelector("#layout").setAttribute("pannelinserter",true);

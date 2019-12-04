@@ -3,7 +3,7 @@
   <component name="PhpAnalysisConfiguration" call_tree_analysis_depth="2" />
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="D:/Mes Installations/php-7.2.10-nts-Win32-VC15-x64" />
+      <path value="$PROJECT_DIR$/../wamp64/bin/php/php7.2.10" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
@@ -13,18 +13,25 @@
       <extension name="Parle" enabled="true" />
       <extension name="SaxonC" enabled="true" />
       <extension name="ZendCache" enabled="true" />
+      <extension name="com_dotnet" enabled="true" />
+      <extension name="crypto" enabled="true" />
       <extension name="event" enabled="true" />
       <extension name="leveldb" enabled="true" />
       <extension name="lua" enabled="true" />
       <extension name="mapscript" enabled="true" />
+      <extension name="meminfo" enabled="true" />
       <extension name="msgpack" enabled="true" />
+      <extension name="parallel" enabled="true" />
       <extension name="rdkafka" enabled="true" />
       <extension name="solr" enabled="true" />
+      <extension name="stomp" enabled="true" />
       <extension name="sync" enabled="true" />
       <extension name="uopz" enabled="true" />
+      <extension name="uv" enabled="true" />
       <extension name="xcache" enabled="true" />
       <extension name="yaf" enabled="true" />
       <extension name="yar" enabled="true" />
+      <extension name="zookeeper" enabled="true" />
     </extensions>
   </component>
 </project>

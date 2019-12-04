@@ -1,12 +1,14 @@
 <?php
-
+/*
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-
+*/
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
 $url3 = "https://back.arthur-moug.in/wp-json/wp/v2/media";
 $url4 = "https://back.arthur-moug.in/wp-json/wp/v2/posts";
+
+
 
 function APICall($url){
     //https://support.ladesk.com/061754-How-to-make-REST-calls-in-PHP
@@ -18,6 +20,7 @@ function APICall($url){
     } else {
         $decoded = json_decode($curl_reponse);
         if(isset($decoded->response->status) && $decoded->response->status == 'ERROR'){
+
             $retour = false;
         }
         else {
@@ -133,7 +136,7 @@ function FilterImages($content){
 }
 
 function RenderSingleContent($singleContent){
-    //var_dump($singleContent);
+
 
     $retour = array();
 
@@ -258,6 +261,7 @@ function RenderSingleContent($singleContent){
 }
 
 function AddRenderContent($classicContent){
+    var_dump($classicContent);
     $rendered= array(
         "travaux" => RenderSingleContent($classicContent["travaux"]),
         "pages" => RenderSingleContent($classicContent["pages"]),
@@ -266,6 +270,11 @@ function AddRenderContent($classicContent){
     $classicContent["rendered"] = $rendered;
     return $classicContent;
 }
+
+function RenderPage($content){
+    $filename = "../index.html";
+    var_dump($content);
+};
 
 function GetContent(){
     $filename = "backup.txt";
@@ -291,7 +300,7 @@ function GetContent(){
         $medias = APICall("https://back.arthur-moug.in/wp-json/wp/v2/media");
         $posts = APICall("https://back.arthur-moug.in/wp-json/wp/v2/posts");
 
-        if ($travaux === null || $medias === null || $pages === null || $posts === null) {
+        if ($travaux === false || $medias === false || $pages === false || $posts === false) {
 
             $content = file_get_contents($filename);
 
@@ -314,6 +323,7 @@ function GetContent(){
             /**/
             file_put_contents($filename, $content);
             /**/
+            RenderPage($classicContent);
         }
 
     }
