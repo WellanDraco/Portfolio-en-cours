@@ -272,7 +272,7 @@ function AddRenderContent($classicContent){
 function RenderPage($content){
     $filename = "../index.html";
     $fileContent = file_get_contents($filename);
-    var_dump($content);
+    var_dump($content['rendered']);
     $contact = $content["pages"][0];
     $presentation = $content["pages"][1];
     $travaux = $content["travaux"];
@@ -303,7 +303,7 @@ function RenderPage($content){
     $splitedFileContent = explode("<!--PROJECTS PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     foreach ($travaux as $travail){
-        var_dump($travail);
+       // var_dump($travail);
         //$fileContent .= $travail;
     }
 
