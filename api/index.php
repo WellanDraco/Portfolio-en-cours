@@ -309,7 +309,8 @@ function RenderPage($content){
     $fileContent .= $splitedFileContent[1];
 
 
-    var_dump($fileContent);
+    //var_dump($fileContent);
+    file_put_contents($filename,$fileContent);
 };
 
 
@@ -361,7 +362,7 @@ function GetContent(){
             /**/
             file_put_contents($filename, $content);
             /**/
-            RenderPage($classicContent);
+            RenderPage(json_decode($content));
         }
 
     }
