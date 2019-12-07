@@ -273,9 +273,9 @@ function RenderPage($content){
     $filename = "../index.html";
     $fileContent = file_get_contents($filename);
     var_dump( $content['rendered']);
-    $contact = $content['rendered']["pages"][0];
-    $presentation = $content['rendered']["pages"][1];
-    $travaux = $content['rendered']["travaux"];
+    $contact = $content["pages"][0];
+    $presentation = $content["pages"][1];
+    $travaux = $content["travaux"];
 
 
     /*
