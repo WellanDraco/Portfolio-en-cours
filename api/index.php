@@ -273,33 +273,26 @@ function RenderPage($content){
     $filename = "../index.html";
     $fileContent = file_get_contents($filename);
     var_dump( $content['rendered']);
-    $contact = $content["pages"][0];
-    $presentation = $content["pages"][1];
-    $travaux = $content["travaux"];
+    /**
+    $contact = $content['rendered']["pages"][0];
+    $presentation = $content['rendered']["pages"][1];
+    $travaux = $content['rendered']["travaux"];
 
 
-    /*
-     * Contact
-     */
+    //Contact
     $splitedFileContent = explode("<!--CONTACT PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     $fileContent .= $contact;
     $fileContent .= $splitedFileContent[1];
-/**/
 
-    /*
-     * presentation
-     */
+    // presentation
     $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     $fileContent .= $presentation;
     $splitedFileContent = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
     $fileContent .= $splitedFileContent[1];
-/**/
 
-    /*
-     * Travaux
-     */
+    // Travaux
     $splitedFileContent = explode("<!--PROJECTS PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     foreach ($travaux as $travail){
@@ -311,6 +304,7 @@ function RenderPage($content){
 
     //var_dump($fileContent);
     file_put_contents($filename,$fileContent);
+    /**/
 };
 
 
