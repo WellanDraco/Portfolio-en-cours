@@ -52,7 +52,6 @@
         for(let i = 0;i<buttons.length;i++){
             let el = buttons[i];
             el.addEventListener('click', showmore);
-
         }
     }
 

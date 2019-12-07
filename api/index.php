@@ -277,7 +277,41 @@ function RenderPage($content){
     $presentation = $content["pages"][1];
     $travaux = $content["travaux"];
 
+
+    /*
+     * Contact
+     *
+    $splitedFileContent = explode("<!--CONTACT PHPMARKER-->", $fileContent);
+    $fileContent = $splitedFileContent[0];
+    $fileContent .= $contact;
+    $fileContent .= $splitedFileContent[1];
+/**/
+
+    /*
+     * presentation
+     *
+    $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
+    $fileContent = $splitedFileContent[0];
+    $fileContent .= $presentation;
+    $splitedFileContent = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
+    $fileContent .= $splitedFileContent[1];
+/**/
+
+    /*
+     * Travaux
+     */
+    $splitedFileContent = explode("<!--PROJECTS PHPMARKER-->", $fileContent);
+    $fileContent = $splitedFileContent[0];
+    foreach ($travaux as $travail){
+        var_dump($travail);
+        //$fileContent .= $travail;
+    }
+
+    $fileContent .= $splitedFileContent[1];
+
 };
+
+
 
 function GetContent(){
     $filename = "backup.txt";
