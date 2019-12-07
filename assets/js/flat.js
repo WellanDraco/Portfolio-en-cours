@@ -25,6 +25,7 @@
 
     //render content
     function renderAll(json){
+        /*
         //console.log(json);
 
         //render "a propos"
@@ -45,7 +46,7 @@
         var contactjson = json.pages.find(obj => obj.slug === 'contact');
         var renderedContact = json.rendered.pages[json.pages.indexOf(contactjson)];
         insertOne(renderedContact,document.getElementById('contact'),false);
-
+*/
         var buttons = document.querySelectorAll("article div button");
         //console.log(buttons);
 
