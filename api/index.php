@@ -271,8 +271,11 @@ function AddRenderContent($classicContent){
 
 function RenderPage($content){
     $filename = "../index.html";
-    var_dump($content["pages"]);
-
+    $fileContent = file_get_contents($filename);
+    var_dump($content);
+    $contact = $content["pages"][0];
+    $presentation = $content["pages"][1];
+    $travaux = $content["travaux"];
 
 };
 
