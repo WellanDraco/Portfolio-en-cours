@@ -1,8 +1,8 @@
 <?php
-/*
+/**/
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-*/
+/**/
 $url = "https://back.arthur-moug.in/wp-json/wp/v2/travaux";
 $url2 = "https://back.arthur-moug.in/wp-json/wp/v2/pages";
 $url3 = "https://back.arthur-moug.in/wp-json/wp/v2/media";
@@ -377,7 +377,7 @@ function GetContent(){
 
 $jsonExport = GetContent();
 //echo "<br><br><br><br><br>RESULT<br><br><br><br><br>";
-/**
+/**/
 echo $jsonExport;
 /**/
 
