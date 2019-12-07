@@ -280,7 +280,7 @@ function RenderPage($content){
 
     /*
      * Contact
-     *
+     */
     $splitedFileContent = explode("<!--CONTACT PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     $fileContent .= $contact;
@@ -289,7 +289,7 @@ function RenderPage($content){
 
     /*
      * presentation
-     *
+     */
     $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     $fileContent .= $presentation;
@@ -303,12 +303,13 @@ function RenderPage($content){
     $splitedFileContent = explode("<!--PROJECTS PHPMARKER-->", $fileContent);
     $fileContent = $splitedFileContent[0];
     foreach ($travaux as $travail){
-        var_dump($travail);
-        //$fileContent .= $travail;
+        $fileContent .= $travail;
     }
 
     $fileContent .= $splitedFileContent[1];
 
+
+    var_dump($fileContent);
 };
 
 
