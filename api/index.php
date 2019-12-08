@@ -288,21 +288,22 @@ function RenderPage($content){
         $fileContent .= $contact;
         $fileContent .= $splitedFileContent[1];
     }
-
+    var_dump($fileContent);
 
     // presentation
     $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
-    //var_dump($splitedFileContent);
+    var_dump($splitedFileContent);
     if(count($splitedFileContent)!= 1){
         $fileContent = $splitedFileContent[0];
         $fileContent .= $presentation;
         $splitedFileContent = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
         $fileContent .= $splitedFileContent[1];
     }
+    var_dump($fileContent);
 
     // Travaux
     $splitedFileContent = explode("<!--PROJECTS PHPMARKER-->", $fileContent);
-    //var_dump($splitedFileContent);
+    var_dump($splitedFileContent);
     if(count($splitedFileContent)!= 1) {
         $fileContent = $splitedFileContent[0];
         foreach ($travaux as $travail) {
@@ -310,6 +311,7 @@ function RenderPage($content){
         }
         $fileContent .= $splitedFileContent[1];
     }
+    var_dump($fileContent);
 
     //var_dump($fileContent);
     file_put_contents($filename,$fileContent);
