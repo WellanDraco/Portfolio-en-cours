@@ -4,7 +4,6 @@
     function renderAll(){
 
         var buttons = document.querySelectorAll("article div button");
-        console.log(buttons);
 
         for(let i = 0;i<buttons.length;i++){
             let el = buttons[i];
