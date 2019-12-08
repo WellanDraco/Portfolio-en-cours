@@ -279,10 +279,11 @@ function RenderPage($content){
      */
     foreach ($content as $key => $value){
         if($key == "PHPrendered"){
+            var_dump($value);
             $rendered = $value;
         }
     }
-    /**/
+    /**
     $contact = $rendered["pages"][0];
     $presentation = $rendered["pages"][1];
     $travaux = $rendered["travaux"];
