@@ -282,26 +282,34 @@ function RenderPage($content){
 
     //Contact
     $splitedFileContent = explode("<!--CONTACT PHPMARKER-->", $fileContent);
-    $fileContent = $splitedFileContent[0];
-    $fileContent .= $contact;
-    $fileContent .= $splitedFileContent[1];
+    var_dump($splitedFileContent);
+    if($splitedFileContent.size != 1){
+        $fileContent = $splitedFileContent[0];
+        $fileContent .= $contact;
+        $fileContent .= $splitedFileContent[1];
+    }
+
 
     // presentation
     $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
-    $fileContent = $splitedFileContent[0];
-    $fileContent .= $presentation;
-    $splitedFileContent = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
-    $fileContent .= $splitedFileContent[1];
+    //var_dump($splitedFileContent);
+    if($splitedFileContent.size != 1){
+        $fileContent = $splitedFileContent[0];
+        $fileContent .= $presentation;
+        $splitedFileContent = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
+        $fileContent .= $splitedFileContent[1];
+    }
 
     // Travaux
     $splitedFileContent = explode("<!--PROJECTS PHPMARKER-->", $fileContent);
-    $fileContent = $splitedFileContent[0];
-    foreach ($travaux as $travail){
-        $fileContent .= $travail;
+    //var_dump($splitedFileContent);
+    if($splitedFileContent.size != 1) {
+        $fileContent = $splitedFileContent[0];
+        foreach ($travaux as $travail) {
+            $fileContent .= $travail;
+        }
+        $fileContent .= $splitedFileContent[1];
     }
-
-    $fileContent .= $splitedFileContent[1];
-
 
     //var_dump($fileContent);
     file_put_contents($filename,$fileContent);
@@ -372,7 +380,7 @@ function GetContent(){
 
 $jsonExport = GetContent();
 //echo "<br><br><br><br><br>RESULT<br><br><br><br><br>";
-/**/
+/**
 echo $jsonExport;
 /**/
 
