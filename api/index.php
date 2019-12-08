@@ -292,11 +292,11 @@ function RenderPage($content){
 
     // presentation
     $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
-    var_dump($splitedFileContent);
     if(count($splitedFileContent)!= 1){
         $fileContent = $splitedFileContent[0];
         $fileContent .= $presentation;
         $splitedFileContent = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
+        var_dump($splitedFileContent);
         $fileContent .= $splitedFileContent[1];
     }
     var_dump($fileContent);
