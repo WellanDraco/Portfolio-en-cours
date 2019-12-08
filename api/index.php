@@ -272,7 +272,15 @@ function AddRenderContent($classicContent){
 function RenderPage($content){
     $filename = "../index.html";
     $fileContent = file_get_contents($filename);
-    var_dump($content[4]);
+    //$content["PHPrendered"]);//error 500
+    foreach ($content as $key => $value){
+        if($key == "PHPrendered"){
+            echo "yohaezkfba";
+
+
+        }
+
+    }
     /**
     $contact = $content['rendered']["pages"][0];
     $presentation = $content['rendered']["pages"][1];
