@@ -277,7 +277,7 @@ function RenderPage($content){
     /*
      * C'est la seule facon stable d'accéder au contenu rendered
      */
-    var_dump($content.PHPrendered);
+    var_dump($content->PHPrendered);
     foreach ($content as $key => $value){
         if($key == "PHPrendered"){
           //  var_dump($value);
