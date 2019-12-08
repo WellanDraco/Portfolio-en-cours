@@ -48,7 +48,7 @@
         insertOne(renderedContact,document.getElementById('contact'),false);
 */
         var buttons = document.querySelectorAll("article div button");
-        //console.log(buttons);
+        console.log(buttons);
 
         for(let i = 0;i<buttons.length;i++){
             let el = buttons[i];
