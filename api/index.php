@@ -275,9 +275,7 @@ function RenderPage($content){
     //$content["PHPrendered"]);//error 500
     foreach ($content as $key => $value){
         if($key == "PHPrendered"){
-            echo "yohaezkfba";
-
-
+            var_dump($value);
         }
 
     }
