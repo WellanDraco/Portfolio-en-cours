@@ -18,14 +18,10 @@
         excerpt.classList.toggle('hide');
         content.classList.toggle('show');
         content.classList.toggle('hide');
-    };
-    
-
-
+    }
     function tooglePannelInserter(){
         document.querySelector("#layout").setAttribute("pannelinserter",true);
     }
-
     renderAll();
     tooglePannelInserter();
 })();
