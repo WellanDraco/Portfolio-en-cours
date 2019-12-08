@@ -1,108 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Arthur Mougin</title>
-        <link rel="stylesheet" href="assets/css/main.css">
-        <script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
-        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Mougin</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 
-        <script src="assets/js/pannel-inserter.js"></script>
-        <script src="assets/js/a-progressive-controls.js"></script>
+    <script src="assets/js/pannel-inserter.js"></script>
+    <script src="assets/js/a-progressive-controls.js"></script>
 
-        <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-        <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
-        <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
-        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-        <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
 
-    </head>
-    <body>
-        <header><a href="#"><h1>Arthur Mougin</h1><p>Développeur web, webvr et plus...</p></a></header>
-        <main>
-            <section id="intro">
-                <a-scene embedded>
-                    <a-assets>
-                        <a-mixin id="renderPlane" material="shader:html"></a-mixin>
-                        <a-mixin id="FocusCamera" look-at="#camera" ></a-mixin>
-                        <a-mixin id="FloatingCube" geometry="primitive: box" scale="0.5 0.5 0.5" material="color:#fff;transparent:true;opacity:0.8"></a-mixin>
-                    </a-assets>
-c
-                    <a-entity id="camera-rig" position="0 1.3 0" rotation="0 0 0" >
-                        <a-entity id="camera" camera look-controls="reverseMouseDrag:true" wasd-controls></a-entity>
-                        <a-entity id="hand-holder"></a-entity>
-                        <a-light type="point" intensity="0.5" distance="5"></a-light>
+</head>
+<body>
+<header><a href="#"><h1>Arthur Mougin</h1><p>Développeur web, webvr et plus...</p></a></header>
+<main>
+    <section id="intro">
+        <a-scene embedded>
+            <a-assets>
+                <a-mixin id="renderPlane" material="shader:html"></a-mixin>
+                <a-mixin id="FocusCamera" look-at="#camera" ></a-mixin>
+                <a-mixin id="FloatingCube" geometry="primitive: box" scale="0.5 0.5 0.5" material="color:#fff;transparent:true;opacity:0.8"></a-mixin>
+            </a-assets>
+            c
+            <a-entity id="camera-rig" position="0 1.3 0" rotation="0 0 0" >
+                <a-entity id="camera" camera look-controls="reverseMouseDrag:true" wasd-controls></a-entity>
+                <a-entity id="hand-holder"></a-entity>
+                <a-light type="point" intensity="0.5" distance="5"></a-light>
+            </a-entity>
+
+            <!--                    <a-custom-caroussel>-->
+            <!--                    </a-custom-caroussel>-->
+            <a-entity id="layout" layout="type:circle;radius:4;angle:45;plane:xz" position="0 1 0" rotation="0 135 0" pannelinserter="false">
+                <a-entity id="AboutVR" mixin="FocusCamera">
+                    <a-entity class="floatingCube" animation="property: rotation; to: -360 360 0; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
+                    <a-entity class="PannelHolder" rotation="0 -90 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
+                        <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
                     </a-entity>
-
-<!--                    <a-custom-caroussel>-->
-<!--                    </a-custom-caroussel>-->
-                    <a-entity id="layout" layout="type:circle;radius:4;angle:45;plane:xz" position="0 1 0" rotation="0 135 0" pannelinserter="false">
-                        <a-entity id="AboutVR" mixin="FocusCamera">
-                            <a-entity class="floatingCube" animation="property: rotation; to: -360 360 0; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
-                            <a-entity class="PannelHolder" rotation="0 -90 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                            </a-entity>
-                        </a-entity>
-                        <a-entity id="ProjectsVR" mixin="FocusCamera">
-                            <a-entity class="floatingCube" animation="property: rotation; to: 360 -360 360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
-                            <a-entity class="PannelHolder" rotation="0 -45 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                            </a-entity>
-                        </a-entity>
-                        <a-entity id="ContactVR" mixin="FocusCamera">
-                            <a-entity class="floatingCube" animation="property: rotation; to: 0 360 -360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
-                            <a-entity class="PannelHolder" rotation="0 -90 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                            </a-entity>
-                        </a-entity>
+                </a-entity>
+                <a-entity id="ProjectsVR" mixin="FocusCamera">
+                    <a-entity class="floatingCube" animation="property: rotation; to: 360 -360 360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
+                    <a-entity class="PannelHolder" rotation="0 -45 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
+                        <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
+                        <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
+                        <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
                     </a-entity>
+                </a-entity>
+                <a-entity id="ContactVR" mixin="FocusCamera">
+                    <a-entity class="floatingCube" animation="property: rotation; to: 0 360 -360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
+                    <a-entity class="PannelHolder" rotation="0 -90 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
+                        <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
 
 
-                    <a-entity id="environment"
-                              environment=" preset:starry;
+            <a-entity id="environment"
+                      environment=" preset:starry;
                                             ground:hills;
                                             groundYScale:20;
                                             playArea:0.92;
                                             seed:2;
                                             groundColor:#454545;
                                             groundColor2:#505050"
-                    ></a-entity>
-                </a-scene>
-            </section>
-            <section id="flat">
-                <div class="intro">
-                    <h1>^^ Visite VR ^^</h1>
-                    <p>vv Ou 2D vv</p>
-                </div>
+            ></a-entity>
+        </a-scene>
+    </section>
+    <section id="flat">
+        <div class="intro">
+            <h1>^^ Visite VR ^^</h1>
+            <p>vv Ou 2D vv</p>
+        </div>
 
-                <section id="about">
-                        <!--PRESENTATION1 PHPMARKER-->
-                    <div class="intro">
-                        <h2>A propos de moi</h2>
-                    </div>
-                        <!--PRESENTATION2 PHPMARKER-->
-                </section>
-                <section id="projects">
-                    <div class="intro">
-                        <h2>Mes projets</h2>
-                    </div>
-                    <div class="articles">
-                        <!--PROJECTS PHPMARKER-->
-                    </div>
-                </section>
-                <section id="contact">
-                    <div class="intro">
-                        <h2>Contact</h2>
-                    </div>
-                        <!--CONTACT PHPMARKER-->
-                </section>
-            </section>
-        </main>
-        <footer>
-        <script src="assets/js/flat.js"></script>
-    </footer>
-    </body>
+        <section id="about">
+            <article><div class='titleContainer'><h2>Presentation</h2></div><div class='excerpt show'><p>Moi c&rsquo;est Arthur, Jeune étudiant en Master de Management des Technologies Interactives et 3D à Laval. Je suis passionné par les nouvelles technologies du web, je fait d&rsquo;ailleurs beaucoup de veille sur ce domaine via Feedly, Stumbleupon ou encore Codepen. Le web idéal pour moi est un web beau, fluide, accessible et comme le disent [&hellip;]</p><button>En savoir plus</button></div><div class='content hide'><div class='inner'><h3>Moi c&rsquo;est Arthur,</h3>
+                Jeune étudiant en Master de Management des Technologies Interactives et 3D à Laval.
+
+                Je suis passionné par les nouvelles technologies du web, je fait d&rsquo;ailleurs beaucoup de veille sur ce domaine via Feedly, Stumbleupon ou encore Codepen.
+
+                Le web idéal pour moi est un web beau, fluide, accessible et comme le disent si bien les québécois : Convivial ! parce qu&rsquo;il ne peut en être autrement.
+                <h3>Amoureux des défis technologiques</h3>
+                Il n&rsquo;y a rien de mieux que de relever des défis, esthétique ou technique. J&rsquo;adore me surpasser et apprendre de nouvelles choses par la même occasion.</div><button>Réduire</button></div></article>
+        </section>
+        <section id="projects">
+            <div class="intro">
+                <h2>Mes projets</h2>
+            </div>
+            <div class="articles">
+                <article><div class='titleContainer'><h2>Kwaibu</h2><img alt='thumbnail de Kwaibu' srcset='https://arthur-moug.in/assets/images/2018017a0d92c9-f272-45cf-9699-9ade70f12b9f-150x150.png 150w, https://arthur-moug.in/assets/images/2018017a0d92c9-f272-45cf-9699-9ade70f12b9f-300x195.png 300w, ' src='https://arthur-moug.in/assets/images/2018017a0d92c9-f272-45cf-9699-9ade70f12b9f.png'></img></div><div class='excerpt show'><p>Créer un site selon un thème donné en équipe. Cela a été le premier gros projet en équipe de Arthur Mougin. Nous avons créé une application sur le thème des assistants à l&rsquo;entretien des plantes.</p><button>En savoir plus</button></div><div class='content hide'><div class='inner'><h3>L&rsquo;idée Kwaibu</h3>
+                    Kwaibu était au départ une simple idée : un site qui aiderais ses utilisateurs dans l&rsquo;entretien de leurs plantes domestiques. La cible principale était les étudiants qui n&rsquo;avaient pas forcement le temps de s&rsquo;occuper de leurs plantes.</div><button>Réduire</button></div></article><article><div class='titleContainer'><h2>Campus Sport à Belfort et Montbéliard</h2><img alt='thumbnail de Campus Sport à Belfort et Montbéliard' srcset='https://arthur-moug.in/assets/images/201712ab7c992f-1a86-4e62-b5ea-3be5910972f0-150x150.png 150w, https://arthur-moug.in/assets/images/201712ab7c992f-1a86-4e62-b5ea-3be5910972f0-300x165.png 300w, https://arthur-moug.in/assets/images/201712ab7c992f-1a86-4e62-b5ea-3be5910972f0-1024x562.png 1024w, ' src='https://arthur-moug.in/assets/images/201712ab7c992f-1a86-4e62-b5ea-3be5910972f0.png'></img></div><div class='excerpt show'><p>Ce projet commandité par l&rsquo;université de Franche-Comté consiste en un site informant les étudiants sur les activités et événements sportifs proposés sur les pôles de Belfort et Montbéliard. En plus d&rsquo;informer, ce site doit également permettre une inscription à ces événements.</p><button>En savoir plus</button></div><div class='content hide'><div class='inner'><h2>Un projet avec Commanditaire : Campus Sport</h2>
+                &nbsp;
+
+                Ce projet universitaire sur 6 mois est commandité par une professeure de sport de l&rsquo;iut. Le but étant de réaliser la version Belfort-montbéliard de Campus Sport. Cela consistait en un site présentant les activités et événements sportifs proposés dans le cadre de l&rsquo;iut. L&rsquo;objectif final étant d’inciter plus de monde à pratiquer du sport régulièrement, à venir aux événements donc le succès est variable.  Pour mener à bien ce projet, nous avons pris régulièrement contact avec notre commanditaire. La première séance a consisté à définir plus en détail son besoin avec des questions préparées à l&rsquo;avance.
+
+                Mon rôle était celui de développeur et chef de projet. Mon équipe était constituée d&rsquo;un communicant, Roman Misslin, et d&rsquo;un designer, Marius Brucker. Ici j&rsquo;ai put me concentrer sur la réalisation technique du site ainsi que de certains aspects légaux de Campus Sport.
+
+                <div id="attachment_61" style="width: 310px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-61" class="wp-image-61 size-medium" src="https://arthur-moug.in/assets/images/201712679f4558-3025-42d9-8b0f-31a9a64b3179-300x165.png" alt="Sur la page des sports de Campus Sport, les différents sports sont classés selon leur catégorie, avec une illustration ainsi qu'une citation motivante." width="300" height="165" srcset="https://arthur-moug.in/assets/images/201712679f4558-3025-42d9-8b0f-31a9a64b3179-300x165.png 300w, https://arthur-moug.in/assets/images/201712679f4558-3025-42d9-8b0f-31a9a64b3179-768x422.png 768w, https://arthur-moug.in/assets/images/201712679f4558-3025-42d9-8b0f-31a9a64b3179-1024x563.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /><p id="caption-attachment-61" class="wp-caption-text">La page des sports de Campus-sport.</p></div>
+                <h2>Un Campus Sport dopé au CMS</h2>
+                Les contraintes d&rsquo;évolution du contenu imposaient une interface de gestion. Dans la cas plus spécifique des événements sportifs, notre commanditaire avait fait l’expérience d&rsquo;<a href="https://www.eventbrite.fr/">EventBrite</a> et l&rsquo;avait trouvé trop complexe. Cela nous a donné un cadre pour le choix de solution. De par notre connaissance du CMS, de ses avantages et inconvénients, nous avons choisi WordPress combiné à un plugin consacré à la gestion événementielle. Ce dernier était choisi pour sa lisibilité d&rsquo;interface administrateur.
+
+                <div id="attachment_66" style="width: 310px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-66" class="size-medium wp-image-66" src="https://arthur-moug.in/assets/images/201712b7c8e264-1d33-4781-83d7-f97bad164726-300x176.png" alt="back-office du site Campus Sport" width="300" height="176" srcset="https://arthur-moug.in/assets/images/201712b7c8e264-1d33-4781-83d7-f97bad164726-300x176.png 300w, https://arthur-moug.in/assets/images/201712b7c8e264-1d33-4781-83d7-f97bad164726-768x451.png 768w, https://arthur-moug.in/assets/images/201712b7c8e264-1d33-4781-83d7-f97bad164726-1024x601.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /><p id="caption-attachment-66" class="wp-caption-text">espace administrateur de wordpress avec le plugin Kikfyre traduit via JS.</p></div>
+
+                La contraintes additionnelle était que le plugin tourne en anglais et il n&rsquo;y avait alors pas de traduction intégrée, j&rsquo;en ai fait la demande. Il a fallut trouver et appliquer une méthode de traduction correcte en attendant une traduction officielle. Ainsi j&rsquo;ai intégré en html, css, js et php avec Marius un thème WordPress pour Campus Sport. J&rsquo;ai aussi déployé et migré Campus Sport du serveur de développement au site final <a href="http://campus-sport.pu-pm.univ-fcomte.fr">Campus-sport.pu-pm.univ-fcomte.fr</a>.</div><button>Réduire</button></div></article><article><div class='titleContainer'><h2>Stanley Kubrick</h2><img alt='thumbnail de Stanley Kubrick' srcset='https://arthur-moug.in/assets/images/20171278fa6eb2-ed03-40a4-964a-6e3b4681b211-150x150.jpg 150w, https://arthur-moug.in/assets/images/20171278fa6eb2-ed03-40a4-964a-6e3b4681b211-300x166.jpg 300w, https://arthur-moug.in/assets/images/20171278fa6eb2-ed03-40a4-964a-6e3b4681b211-1024x567.jpg 1024w, ' src='https://arthur-moug.in/assets/images/20171278fa6eb2-ed03-40a4-964a-6e3b4681b211.jpg'></img></div><div class='excerpt show'><p>Ce Boss est un examen en 2 jour durant lesquels Arthur a dut réaliser un site avec Angular sur le thème du fameux réalisateur Stanley Kubrick. Des points supplémentaire étaient attribués si des Open data étaient utilisé, de même que la librairie D3js.</p><button>En savoir plus</button></div><div class='content hide'><div class='inner'><h2>Le sujet : Stanley Kubrick</h2>
+
+
+
+                <p>
+
+                    À 8h les sujets tombent : Réaliser un site d&rsquo;un minimum de 5 pages avec angular JS sur Stanley Kubrick. Cela tombe bien, Stanley a de nombreux bon films à son actifs (2001 l’odyssée de l&rsquo;espace, Shinning et j&rsquo;en passe). Mon plan est de découper le site ainsi : Une page filmographie avec une requête à la base de donnée mondiale des films (IMDB pour Internationnal Movie Data-Base), Une page présentant ses thématiques, une page sur son histoire, une petite infographie avec D3js et une page d&rsquo;accueil pour lier le tout. Une harmonie colorée idéale pour un réalisateur aussi minutieux de la couleur serait celle venant de l&rsquo;un de ses films.
+
+                </p>
+
+
+
+                <figure class="wp-block-image"><img src="https://arthur-moug.in/assets/images/201909stanley-cubrik-2001-odyssee-salon-rouge.jpg" alt="" class="wp-image-79" srcset="https://arthur-moug.in/assets/images/201909stanley-cubrik-2001-odyssee-salon-rouge.jpg 720w, https://arthur-moug.in/assets/images/201909stanley-cubrik-2001-odyssee-salon-rouge-300x140.jpg 300w" sizes="(max-width: 720px) 100vw, 720px" /><figcaption>Salon incliné dans 2001 l&rsquo;Odyssée de l&rsquo;espace</figcaption></figure>
+
+
+
+                <div class="wp-block-image"><figure class="alignright is-resized"><img src="https://arthur-moug.in/assets/images/20171223ee762d-d240-453c-bba5-bb4d0061a693-601x1024.jpg" alt="Site filtré en blanc avec les onglets en colonne bien espacé au milieu du site." class="wp-image-33" width="161" height="274" srcset="https://arthur-moug.in/assets/images/20171223ee762d-d240-453c-bba5-bb4d0061a693-601x1024.jpg 601w, https://arthur-moug.in/assets/images/20171223ee762d-d240-453c-bba5-bb4d0061a693-176x300.jpg 176w, https://arthur-moug.in/assets/images/20171223ee762d-d240-453c-bba5-bb4d0061a693-768x1309.jpg 768w, https://arthur-moug.in/assets/images/20171223ee762d-d240-453c-bba5-bb4d0061a693.jpg 1150w" sizes="(max-width: 161px) 100vw, 161px" /><figcaption>Menu ouvert sur mobile du site Stanley Kubrick.</figcaption></figure></div>
+
+
+
+                <p>C&rsquo;est Pour cela que je me suis inspiré des couleurs de 2001 comme sur la photo si dessous, en changeant quelque peut les proportions : </p>
+
+
+
+                <p> Pour l&rsquo;introduction du site, il fallait rester dans la même colorimétrie. Pour cela, J&rsquo;ai choisit de travailler avec une Photo de Stanley Kubrick mise en Noir et blanc. Jouer avec les contraste et la propriété background-clip était aussi une idée intéressante. </p>
+
+
+
+                <h2>Développement</h2>
+
+
+
+                <p> Le site tourne principalement avec angular.js 1.6.6. Cette technologie est très intéressante pour la gestion de Templates rapides à charger. Le mauvais côté non pris en compte dans cet exercice est le référencement. N&rsquo;ayant pas de back-office à gérer cela a été assez rapide. J&rsquo;ai obtenu une clé gratuite de l&rsquo;api TMDB (The Movie Data Base) qui me permet d&rsquo;accéder à un équivalent d&rsquo;IMDB sans avoir besoin de passer par Amazon (qui possède IMDB). Ensuite j&rsquo;ai traité leurs données pour afficher tout les films présenté sur la page Film. </p>
+
+
+
+                <figure class="wp-block-image"><img src="https://arthur-moug.in/assets/images/2017124111d831-5047-483d-950a-b2c3b49b242e-1024x653.jpg" alt="" class="wp-image-34" srcset="https://arthur-moug.in/assets/images/2017124111d831-5047-483d-950a-b2c3b49b242e-1024x653.jpg 1024w, https://arthur-moug.in/assets/images/2017124111d831-5047-483d-950a-b2c3b49b242e-300x191.jpg 300w, https://arthur-moug.in/assets/images/2017124111d831-5047-483d-950a-b2c3b49b242e-768x489.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>Capture du site sur Stanley Kubrick dans la section films.</figcaption></figure>
+
+
+
+                <p> Cependant certains films n&rsquo;avaient pas de revue disponible en Français. j&rsquo;ai donc dut détecter s&rsquo;ils en avaient, et sinon je rappelle la revue anglaise qui existe dans tout les cas. </p></div><button>Réduire</button></div></article>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="intro">
+                <h2>Contact</h2>
+            </div>
+            <article><div class='titleContainer'><h2>contact</h2></div><div class='content show'><p>Vous voulez en savoir plus ou me lancer un défis ? contactez moi !</p><ul><li class='facebook'><a href='https://www.facebook.com/arthur.mougin.1'>https://www.facebook.com/arthur.mougin.1</a></li><li class='linkedin'><a href='https://www.linkedin.com/in/arthur-mougin/'>https://www.linkedin.com/in/arthur-mougin/</a></li><li class='email'><a href='mailto:arthur.mougin@live.fr'>mailto:arthur.mougin@live.fr</a></li><li class='téléphone'><a href='tel:06 26 17 87 97'>tel:06 26 17 87 97</a></li></ul></div></article>
+        </section>
+    </section>
+</main>
+<footer>
+    <script src="assets/js/flat.js"></script>
+</footer>
+</body>
 </html>

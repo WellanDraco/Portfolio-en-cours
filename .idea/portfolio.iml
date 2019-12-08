@@ -29,5 +29,6 @@
     <orderEntry type="library" name="aframe-layout-component" level="application" />
     <orderEntry type="library" name="aframe-look-at-component" level="application" />
     <orderEntry type="library" name="aframe-html-shader" level="application" />
+    <orderEntry type="library" name="aframe" level="application" />
   </component>
 </module>

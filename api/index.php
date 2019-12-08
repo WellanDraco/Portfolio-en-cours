@@ -381,7 +381,7 @@ function GetContent(){
 
 $jsonExport = GetContent();
 //echo "<br><br><br><br><br>RESULT<br><br><br><br><br>";
-/**
+/**/
 echo $jsonExport;
 /**/
 
