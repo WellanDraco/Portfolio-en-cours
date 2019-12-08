@@ -265,29 +265,18 @@ function AddRenderContent($classicContent){
         "pages" => RenderSingleContent($classicContent["pages"]),
         "posts" => RenderSingleContent($classicContent["posts"]),
     );
-    $classicContent["PHPrendered"] = $rendered;
+    $classicContent["rendered"] = $rendered;
     return $classicContent;
 }
 
 function RenderPage($content){
     $filename = "../index.html";
     $fileContent = file_get_contents($filename);
-    //$content["PHPrendered"]);//error 500
-
-    /*
-     * C'est la seule facon stable d'accéder au contenu rendered
-     */
-    var_dump($content->PHPrendered);
-    foreach ($content as $key => $value){
-        if($key == "PHPrendered"){
-          //  var_dump($value);
-            $rendered = $value;
-        }
-    }
-    /**
-    $contact = $rendered["pages"][0];
-    $presentation = $rendered["pages"][1];
-    $travaux = $rendered["travaux"];
+    //var_dump( $content);
+    /**/
+    $contact = $content->rendered->pages[0];
+    $presentation = $content->rendered->pages[1];
+    $travaux = $content->rendered->travaux;
 
 
     //Contact
