@@ -251,7 +251,7 @@ function RenderSingleContent($singleContent){
             $render .= "<div class='content show'>" . $htmlContent . "</div>";
         }
 
-        $render .= "</article></div>";
+        $render .= "</article>";
 
         $retour[] = $render;
     }
@@ -282,13 +282,13 @@ function RenderPage($content){
 
     //Contact
     $splitedFileContent = explode("<!--CONTACT PHPMARKER-->", $fileContent);
-    var_dump($splitedFileContent);
+    //var_dump($splitedFileContent);
     if(count($splitedFileContent) != 1){
         $fileContent = $splitedFileContent[0];
         $fileContent .= $contact;
         $fileContent .= $splitedFileContent[1];
     }
-    var_dump($fileContent);
+    //var_dump($fileContent);
 
     // presentation
     $splitedFileContent = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
