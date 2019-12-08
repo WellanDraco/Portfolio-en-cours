@@ -270,8 +270,9 @@ function AddRenderContent($classicContent){
 }
 
 function RenderPage($content){
+    $templatename ="../template.html";
     $filename = "../index.html";
-    $fileContent = file_get_contents($filename);
+    $fileContent = file_get_contents($templatename);
     //var_dump( $content);
     /**/
     $contact = $content->rendered->pages[0];
