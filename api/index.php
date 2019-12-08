@@ -265,7 +265,7 @@ function AddRenderContent($classicContent){
         "pages" => RenderSingleContent($classicContent["pages"]),
         "posts" => RenderSingleContent($classicContent["posts"]),
     );
-    $classicContent["rendered"] = $rendered;
+    $classicContent["PHPrendered"] = $rendered;
     return $classicContent;
 }
 
