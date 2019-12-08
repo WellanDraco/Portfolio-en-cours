@@ -280,6 +280,29 @@ function RenderPage($content){
     $travaux = $content->rendered->travaux;
 
 
+
+    //VRContact
+    $splitedFileContent = explode("<!--VRCONTACT PHPMARKER-->", $fileContent);
+    //var_dump($splitedFileContent);
+    if(count($splitedFileContent) != 1){
+        $fileContent = $splitedFileContent[0];
+        $fileContent .= "<a-entity htmlembed mixin='FocusCamera'>".$contact."</a-entity>";
+        $fileContent .= $splitedFileContent[1];
+    }
+
+    //VRpresentation
+    $splitedFileContent = explode("<!--VRPRESENTATION PHPMARKER-->", $fileContent);
+    if(count($splitedFileContent)!= 1){
+        $fileContent = $splitedFileContent[0];
+        $fileContent .= "<a-entity htmlembed mixin='FocusCamera'>".$presentation."</a-entity>";
+        $fileContent .= $splitedFileContent[1];
+    }
+
+
+
+
+
+
     //Contact
     $splitedFileContent = explode("<!--CONTACT PHPMARKER-->", $fileContent);
     //var_dump($splitedFileContent);
@@ -291,7 +314,6 @@ function RenderPage($content){
     //var_dump($fileContent);
 
     // presentation
-
     $splitedFileContent1 = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
     $splitedFileContent2 = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
     if(count($splitedFileContent)!= 1){
@@ -310,6 +332,7 @@ function RenderPage($content){
         }
         $fileContent .= $splitedFileContent[1];
     }
+
     //var_dump($fileContent);
 
     //var_dump($fileContent);

@@ -15,8 +15,7 @@
         <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
         <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-        <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
-
+        <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
     </head>
     <body>
         <header><a href="#"><h1>Arthur Mougin</h1><p>Développeur web, webvr et plus...</p></a></header>
@@ -41,21 +40,19 @@ c
                         <a-entity id="AboutVR" mixin="FocusCamera">
                             <a-entity class="floatingCube" animation="property: rotation; to: -360 360 0; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
                             <a-entity class="PannelHolder" rotation="0 -90 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
+                                <!--VRPRESENTATION PHPMARKER-->
                             </a-entity>
                         </a-entity>
                         <a-entity id="ProjectsVR" mixin="FocusCamera">
                             <a-entity class="floatingCube" animation="property: rotation; to: 360 -360 360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
                             <a-entity class="PannelHolder" rotation="0 -45 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
+                                <!--VRPROJECTS PHPMARKER-->
                             </a-entity>
                         </a-entity>
                         <a-entity id="ContactVR" mixin="FocusCamera">
                             <a-entity class="floatingCube" animation="property: rotation; to: 0 360 -360; loop: true; dur: 50000; easing:linear" mixin="FloatingCube"></a-entity>
                             <a-entity class="PannelHolder" rotation="0 -90 0" layout="type:circle;radius:1;angle:45;plane:xz;align:center">
-                                <a-box scale="0.2 0.2 0.2" mixin="FocusCamera"></a-box>
+                                <!--VRCONTACT PHPMARKER-->
                             </a-entity>
                         </a-entity>
                     </a-entity>

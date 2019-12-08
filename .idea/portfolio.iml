@@ -31,5 +31,11 @@
     <orderEntry type="library" name="aframe-html-shader" level="application" />
     <orderEntry type="library" name="aframe" level="application" />
     <orderEntry type="library" name="webxr-polyfill" level="application" />
+    <orderEntry type="library" name="aframe-html-shader" level="application" />
+    <orderEntry type="library" name="aframe-look-at-component" level="application" />
+    <orderEntry type="library" name="aframe-environment-component" level="application" />
+    <orderEntry type="library" name="aframe-layout-component" level="application" />
+    <orderEntry type="library" name="super-hands" level="application" />
+    <orderEntry type="library" name="build" level="application" />
   </component>
 </module>
