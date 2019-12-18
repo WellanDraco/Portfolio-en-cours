@@ -134,16 +134,16 @@ section .intro {
     background-size: contain;
 }
 
-#contact article ul li.facebook a{
+#flat #contact article ul li.facebook a{
     background-image: url('icons/facebook.png');
 }
-#contact article ul li.linkedin a{
+#flat #contact article ul li.linkedin a{
     background-image: url('icons/linkedin.png');
 }
-#contact article ul li.email a{
+#flat #contact article ul li.email a{
     background-image: url('icons/mail.png');
 }
-#contact article ul li.téléphone a{
+#flat #contact article ul li.téléphone a{
     background-image: url('icons/telephone.png');
 }
 

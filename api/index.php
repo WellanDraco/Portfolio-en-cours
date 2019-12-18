@@ -224,7 +224,7 @@ function RenderSingleContent($singleContent){
 
         $render .= "</div>";
 
-        $htmlContent = str_replace("\n","<br>",trim($a->content->rendered));
+        $htmlContent = str_replace("\n\n","\n<br>",trim($a->content->rendered));
         $useExcerpt = (isset($a->excerpt->rendered) && ($htmlContent != trim($a->excerpt->rendered)));
 
         if($a->slug == "contact"){

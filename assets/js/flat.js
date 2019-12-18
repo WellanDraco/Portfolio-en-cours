@@ -24,4 +24,5 @@
     }
     renderAll();
     tooglePannelInserter();
+
 })();
