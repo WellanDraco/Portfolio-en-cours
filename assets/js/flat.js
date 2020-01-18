@@ -1,5 +1,4 @@
 (function(){
-    console.log("test");
     //render content
     function ActivateAll(){
 
@@ -19,12 +18,6 @@
         content.classList.toggle('show');
         content.classList.toggle('hide');
     }
-    function tooglePannelInserter(){
-
-        document.querySelector("#layout").setAttribute("pannelhandler","true");
-    }
     ActivateAll();
-    tooglePannelInserter();
-    console.log("test2");
 
 })();
