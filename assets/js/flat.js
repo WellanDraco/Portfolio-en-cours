@@ -1,7 +1,7 @@
 (function(){
-
+    console.log("test");
     //render content
-    function renderAll(){
+    function ActivateAll(){
 
         var buttons = document.querySelectorAll("article div button");
 
@@ -20,9 +20,11 @@
         content.classList.toggle('hide');
     }
     function tooglePannelInserter(){
-        document.querySelector("#layout").setAttribute("pannelinserter",true);
+
+        document.querySelector("#layout").setAttribute("pannelhandler","true");
     }
-    renderAll();
+    ActivateAll();
     tooglePannelInserter();
+    console.log("test2");
 
 })();

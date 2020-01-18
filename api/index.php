@@ -279,7 +279,7 @@ function RenderPage($content){
     $presentation = $content->rendered->pages[1];
     $travaux = $content->rendered->travaux;
 
-
+/*
 
     //VRContact
     $splitedFileContent = explode("<!--VRCONTACT PHPMARKER-->", $fileContent);
@@ -300,7 +300,7 @@ function RenderPage($content){
 
 
 
-
+*/
 
 
     //Contact
@@ -314,12 +314,11 @@ function RenderPage($content){
     //var_dump($fileContent);
 
     // presentation
-    $splitedFileContent1 = explode("<!--PRESENTATION1 PHPMARKER-->", $fileContent);
-    $splitedFileContent2 = explode("<!--PRESENTATION2 PHPMARKER-->", $fileContent);
+    $splitedFileContent = explode("<!--PRESENTATION PHPMARKER-->", $fileContent);
     if(count($splitedFileContent)!= 1){
-        $fileContent = $splitedFileContent1[0];
+        $fileContent = $splitedFileContent[0];
         $fileContent .= $presentation;
-        $fileContent .= $splitedFileContent2[1];
+        $fileContent .= $splitedFileContent[1];
     }
 
     // Travaux

@@ -8,18 +8,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="aframe-mouse-cursor-component" level="application" />
     <orderEntry type="library" name="super-hands" level="application" />
     <orderEntry type="library" name="aframe-physics-system" level="application" />
     <orderEntry type="library" name="aframe" level="application" />
     <orderEntry type="library" name="webxr-polyfill" level="application" />
     <orderEntry type="library" name="aframe-environment-component" level="application" />
-    <orderEntry type="library" name="aframe-extras" level="application" />
     <orderEntry type="library" name="aframe-layout-component" level="application" />
     <orderEntry type="library" name="webxr-polyfill" level="application" />
     <orderEntry type="library" name="aframe" level="application" />
     <orderEntry type="library" name="aframe-environment-component" level="application" />
-    <orderEntry type="library" name="aframe-extras" level="application" />
     <orderEntry type="library" name="super-hands" level="application" />
     <orderEntry type="library" name="aframe-layout-component" level="application" />
     <orderEntry type="library" name="aframe" level="application" />
@@ -36,6 +33,7 @@
     <orderEntry type="library" name="aframe-environment-component" level="application" />
     <orderEntry type="library" name="aframe-layout-component" level="application" />
     <orderEntry type="library" name="super-hands" level="application" />
+    <orderEntry type="library" name="build" level="application" />
     <orderEntry type="library" name="build" level="application" />
   </component>
 </module>
