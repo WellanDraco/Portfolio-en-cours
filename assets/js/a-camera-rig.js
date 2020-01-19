@@ -5,7 +5,7 @@ AFRAME.registerComponent('camerarig', {
         if(AFRAME.utils.device.isMobile()){
             console.log("mobile");
             let el = this.el;
-            let camera = el.getElementById("camera");
+            let camera = this.getElementById("camera");
             console.log(camera.object3D.rotation);
             el.object3D.rotation.set(
                 THREE.Math.degToRad(0),
