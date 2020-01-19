@@ -3,9 +3,9 @@ AFRAME.registerComponent('camerarig', {
        //test mobile
         console.log(AFRAME.utils.device.isMobile());
         if(AFRAME.utils.device.isMobile()){
-            console.log("mobile");
+            console.dir(this.el);
             let el = this.el;
-            let camera = this.getElementById("camera");
+            let camera = el.querySelector("#camera");
             console.log(camera.object3D.rotation);
             el.object3D.rotation.set(
                 THREE.Math.degToRad(0),
@@ -13,6 +13,6 @@ AFRAME.registerComponent('camerarig', {
                 THREE.Math.degToRad(0)
             );
             el.object3D.rotation.x += Math.PI;
-        }
+       }
     }
 });
