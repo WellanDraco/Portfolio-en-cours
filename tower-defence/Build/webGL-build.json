@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "towerDefence",
+"productVersion": "0.1",
+"dataUrl": "webGL-build.data.unityweb",
+"wasmCodeUrl": "webGL-build.wasm.code.unityweb",
+"wasmFrameworkUrl": "webGL-build.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.0a6"
+}
