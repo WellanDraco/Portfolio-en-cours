@@ -38,6 +38,7 @@
         }
         button:hover {
             box-shadow: 0px 1px 2px 0px #0000002e;
+            background-color: #2b377b;
         }
         button[disabled] {
             background-color: #03a9f457;
@@ -49,7 +50,7 @@
     <div id="preload">
         <h1>Portfolio social d'Arthur Mougin</h1>
         <a href="http://bit.ly/2klnosi">Si vous préférez en savoir plus avant de me rencontrer, voici mon linkedin.</a>
-        <p id="message"><button>Chargement en cours</button></p>
+        <p id="message"><button disabled>Chargement en cours</button></p>
     </div>
     <iframe id="MyIframe" title="webXR Meeting Room with Arthur Mougin" src="https://hubs.mozilla.com/mR9fW5d/am-room/?embed_token=96da31a386c1a7e875a4fc526880f6f2" allow="microphone; camera; vr; speaker;" allowfullscreen="true"></iframe>
     <script>
@@ -60,7 +61,7 @@
             "<button disabled>Chargement en cours</button>",
             "<button disabled>Chargement en cours.</button>",
             "<button disabled>Chargement en cours..</button>",
-            "<button>La room sociale est prête, clickez ici à la salle de réunion!<br>Je vous rejoindrais en fonction de mes disponibilités...</button>"
+            "<button>Le monde social 3D est prêt, clickez ici pour y accéder!<br>Je vous y rejoindrais en fonction de mes disponibilités...</button>"
         ];
         var messageHolder = document.getElementById("message");
         var preloader = document.getElementById("preload");
