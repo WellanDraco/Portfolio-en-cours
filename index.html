@@ -49,7 +49,9 @@
 <body>
     <div id="preload">
         <h1>Portfolio social d'Arthur Mougin</h1>
-        <p>Si vous préférez en savoir plus avant de me rencontrer, <a href="http://bit.ly/2klnosi">voici mon linkedin.</a>
+        <p>Voulez vous en savoir plus avant de le rencontrer ?</p>
+        <a href="http://bit.ly/2klnosi">voici le linkedin d'Arthur Mougin</a>
+        <h2>ou</h2>
         <p id="message"><button disabled>Chargement en cours</button></p>
         
         <!-- Your Chat Plugin code -->
@@ -73,7 +75,7 @@
             "<button disabled>Chargement en cours</button>",
             "<button disabled>Chargement en cours.</button>",
             "<button disabled>Chargement en cours..</button>",
-            "<button>Le monde social 3D est prêt, clickez ici pour y accéder!<br>Je vous y rejoindrais en fonction de mes disponibilités...</button>"
+            "<button>Clickez ici pour le rencontrer !<br>Il vous y rejoindra en fonction de ses disponibilités...</button>"
         ];
         var messageHolder = document.getElementById("message");
         var preloader = document.getElementById("preload");
@@ -91,12 +93,12 @@
             setTimeout(()=>{
                 clearInterval(clock);
                 setMessage(3);
-                preloader.addEventListener("click",hideAndRemoveListener);
+                messageHolder.addEventListener("click",hideAndRemoveListener);
             },1000)
         }
         function hideAndRemoveListener(){
             console.log("click");
-            preloader.removeEventListener("click",hideAndRemoveListener);
+            messageHolder.removeEventListener("click",hideAndRemoveListener);
             preloader.style.display = "none";
         }
 
