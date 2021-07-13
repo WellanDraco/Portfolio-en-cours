@@ -1,4 +1,4 @@
-<html lang="fr">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,29 +60,30 @@
             background-color: #03a9f457;
             box-shadow: 0px 1px 2px 0px #0000002e;
         }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        a, button  {
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
     <div id="preload">
         <h1>Portfolio social immersif d'Arthur Mougin, Développeur WebXR et XR</h1>
-        <p>Voulez vous en savoir plus ?</br>
-        <a href="http://bit.ly/2klnosi">voici le linkedin d'Arthur Mougin</a></p>
-        <h2>ou</h2>
-        <p id="message"><button disabled>Chargement en cours</button></p>
-        
-        <!-- Your Chat Plugin code -->
-        <div class="fb-customerchat"
-            attribution=setup_tool
-            page_id="104472084723754"
-            theme_color="#3F51B5"
-            logged_in_greeting="Bonjour! intéressé pour échanger ?"
-            logged_out_greeting="Bonjour! intéressé pour échanger ?"
-            greeting_dialog_display="hide"
-            >
+        <p>Voulez vous en savoir plus ?</p>
+        <div class="options">
+            <p id="message"><button disabled>Chargement en cours</button></p>
+            <p><b>ou</b></p>
+            <a href="http://bit.ly/2klnosi">Linkedin d'Arthur Mougin</a>
         </div>
     </div>
-    <iframe id="MyIframe" title="webXR Meeting Room with Arthur Mougin" src="https://hubs.mozilla.com/mR9fW5d/am-room/?embed_token=96da31a386c1a7e875a4fc526880f6f2" allow="microphone; camera; vr; speaker;" allowfullscreen="true"></iframe>
-    
+
+    <iframe id="MyIframe" title="webXR Meeting Room with Arthur Mougin" 
+    src="https://hubs.mozilla.com/mR9fW5d?embed_token=96da31a386c1a7e875a4fc526880f6f2" 
+    allow="microphone; camera; vr; speaker; audio; xr-spatial-tracking" allowfullscreen="true"></iframe>
     <script>
         //variables
         var delay = 800;
@@ -91,7 +92,7 @@
             "<button disabled>Chargement en cours</button>",
             "<button disabled>Chargement en cours.</button>",
             "<button disabled>Chargement en cours..</button>",
-            "<button>Rencontrez le en 3D/Réalité virtuelle !<br>Il vous y rejoindra dans la minute en fonction de ses disponibilités...</button>"
+            "<button>Sonnette du bureau d'Arthur</button>"
         ];
         var messageHolder = document.getElementById("message");
         var preloader = document.getElementById("preload");
@@ -131,29 +132,9 @@
             request.send();
         }
 
-    </script>
 
-       <!-- Load Facebook SDK for JavaScript -->
-       <!--
-       <div id="fb-root"></div>
-       <script>
-           window.fbAsyncInit = function() {
-               FB.init({
-                   xfbml            : true,
-                   version          : 'v8.0'
-               });
-               };
-   
-               (function(d, s, id) {
-               var js, fjs = d.getElementsByTagName(s)[0];
-               if (d.getElementById(id)) return;
-               js = d.createElement(s); js.id = id;
-               js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
-               fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-       </script><!---->
-   
 
+    </script> 
 </body>
 </html>
 
