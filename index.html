@@ -127,7 +127,7 @@
         function sendMessage() {
             console.log("message envoyé")
             var request = new XMLHttpRequest();
-            var string = "quelqu'un parlant " +navigator.language + " vient de se connecter";
+            var string = "quelqu'un parlant " +navigator.language + " vient de se connecter. rejoins les à https://hubs.mozilla.com/mR9fW5d";
             request.open('GET','/sms.php?msg=' + encodeURI(string));
             request.send();
         }
