@@ -127,7 +127,7 @@
             console.log("message envoyé")
             var request = new XMLHttpRequest();
             var string = "quelqu'un parlant " +navigator.language + " vient de se connecter";
-            request.open('GET','https://smsapi.free-mobile.fr/sendmsg?user=19541329&pass=19541329&msg=' + encodeURI(string));
+            request.open('GET','/sms.php?msg=' + encodeURI(string));
             request.send();
         }
 
