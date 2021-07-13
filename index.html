@@ -116,11 +116,21 @@
             console.log("click");
             messageHolder.removeEventListener("click",hideAndRemoveListener);
             preloader.style.display = "none";
+            sendMessage();
         }
 
         //Lets goo
         const clock = setInterval(setloopingNextMessage,delay)
         document.getElementById("MyIframe").addEventListener("load",wait1sec);
+
+        function sendMessage() {
+            console.log("message envoyé")
+            var request = new XMLHttpRequest();
+            var string = "quelqu'un parlant " +navigator.language + " vient de se connecter";
+            request.open('GET','https://smsapi.free-mobile.fr/sendmsg?user=19541329&pass=19541329&msg=' + encodeURI(string));
+            request.send();
+        }
+
     </script>
 
        <!-- Load Facebook SDK for JavaScript -->
@@ -141,7 +151,7 @@
                js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
                fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
-       </script>-->
+       </script><!---->
    
 
 </body>
