@@ -20,17 +20,24 @@
         }
     </script>
     <style>
+
+        h1 {
+            margin:1em;
+        }
+
         body {
             margin: 0;
             overflow: hidden;
             padding: 0;
             text-align: center;
         }   
+
         iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
+
         #preload {
             padding: 2em;
             box-sizing: border-box;
@@ -44,18 +51,21 @@
             justify-content: center;
             font-family: monospace;
         }
+
         button {
             border-radius: 2px;
-            padding: 0.4em 1em;
+            padding: 0.2em 0.7em;
             box-shadow: 0px 2px 4px 0px #0000002e;
             background-color: #3F51B5;
             color: white;
             border: none;
         }
+        
         button:hover {
             box-shadow: 0px 1px 2px 0px #0000002e;
             background-color: #2b377b;
         }
+
         button[disabled] {
             background-color: #03a9f457;
             box-shadow: 0px 1px 2px 0px #0000002e;
@@ -63,21 +73,61 @@
 
         p {
             font-size: 1.2rem;
+            margin:0.5em;
         }
 
-        a, button  {
+        button  {
             font-size: 1.5em;
         }
+        
+        a  {
+            font-size: 2em;
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;    
+            justify-content: center;
+        }
+
+        .options a {
+            text-decoration: none;
+            font-size: 3em;
+            margin: 0;
+            width: 43px;
+            overflow: hidden;
+            height: 48px;
+        }
+
+        .options a:before {
+            color: #3F51B5;
+        }
+
+        .options a:hover:before {
+            color: #2b377b;
+        }
+
+        .options p:nth-child(2){
+            margin-left:0;
+        }
+        .options p:nth-child(1){
+            margin-right:0.2em;
+        }
     </style>
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
 </head>
 <body>
     <div id="preload">
-        <h1>Portfolio social immersif d'Arthur Mougin, Développeur WebXR et XR</h1>
-        <p>Voulez vous en savoir plus ?</p>
+        <h1>Arthur Mougin, Développeur WebXR et XR</h1>
+        
         <div class="options">
             <p id="message"><button disabled>Chargement en cours</button></p>
+            <p><b>, </b></p>
+            <a class="fab fa-linkedin" href="http://bit.ly/2klnosi">Profil Linkedin</a>
             <p><b>ou</b></p>
-            <a href="http://bit.ly/2klnosi">Linkedin d'Arthur Mougin</a>
+            <a class="fab fa-discord" href="https://discordapp.com/users/269572981792047106">Profil Discord</a>
         </div>
     </div>
 
@@ -85,14 +135,17 @@
     src="https://hubs.mozilla.com/mR9fW5d?embed_token=96da31a386c1a7e875a4fc526880f6f2" 
     allow="microphone; camera; vr; speaker; audio; xr-spatial-tracking" allowfullscreen="true"></iframe>
     <script>
+            //https://discordapp.com/users/269572981792047106
+            
+
         //variables
         var delay = 800;
         var index = 0;
         var messages = [
-            "<button disabled>Chargement en cours</button>",
-            "<button disabled>Chargement en cours.</button>",
-            "<button disabled>Chargement en cours..</button>",
-            "<button>Sonnette du bureau d'Arthur</button>"
+            "<button disabled>Chargement</button>",
+            "<button disabled>Chargement.</button>",
+            "<button disabled>Chargement..</button>",
+            "<button>Sonnez à son bureau immersif</button>"
         ];
         var messageHolder = document.getElementById("message");
         var preloader = document.getElementById("preload");
@@ -106,6 +159,7 @@
             index = ++index % 3;
             setMessage(index);
         }
+        
         function wait1sec(){
             setTimeout(()=>{
                 clearInterval(clock);
@@ -113,6 +167,7 @@
                 messageHolder.addEventListener("click",hideAndRemoveListener);
             },1000)
         }
+
         function hideAndRemoveListener(){
             console.log("click");
             messageHolder.removeEventListener("click",hideAndRemoveListener);
