@@ -108,13 +108,6 @@
         .options a:hover:before {
             color: #2b377b;
         }
-
-        .options p:nth-child(2){
-            margin-left:0;
-        }
-        .options p:nth-child(1){
-            margin-right:0.2em;
-        }
     </style>
     <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
 </head>
@@ -123,8 +116,7 @@
         <h1>Arthur Mougin, Développeur WebXR et XR</h1>
         
         <div class="options">
-            <p id="message"><button disabled>Chargement en cours</button></p>
-            <p><b>, </b></p>
+            <p id="message"><button disabled>Chargement en cours</button><b>, </b></p>
             <a class="fab fa-linkedin" href="http://bit.ly/2klnosi">Profil Linkedin</a>
             <p><b>ou</b></p>
             <a class="fab fa-discord" href="https://discordapp.com/users/269572981792047106">Profil Discord</a>
@@ -142,10 +134,10 @@
         var delay = 800;
         var index = 0;
         var messages = [
-            "<button disabled>Chargement</button>",
-            "<button disabled>Chargement.</button>",
-            "<button disabled>Chargement..</button>",
-            "<button>Sonnez à son bureau immersif</button>"
+            "<button disabled>Chargement</button><b>, </b>",
+            "<button disabled>Chargement.</button><b>, </b>",
+            "<button disabled>Chargement..</button><b>, </b>",
+            "<button>Sonnez à son bureau immersif</button><b>, </b>"
         ];
         var messageHolder = document.getElementById("message");
         var preloader = document.getElementById("preload");
